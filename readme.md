@@ -1,1 +1,1 @@
-loc: ~/.vim
+loc: `~/.vim`
