@@ -2,12 +2,15 @@ require('define')
 
 function TestWorkingDir(functionName)
     local currentFilePath = vim.fn.expand('%:p')
+
     if currentFilePath == '' then
         print(functionName .. ': Current file path not found')
         return 0
     end
+
     local systemroot = trim(system('echo %systemroot%'))
-    if currentFilePath.find(systemroot) then
+
+    if string.find(currentFilePath, systemroot) then
         print(
             functionName ..
             ': The editor working directory is ' ..
@@ -16,8 +19,10 @@ function TestWorkingDir(functionName)
         )
         return 0
     end
+
     local cmdWd = trim(system('cd'))
-    if cmdWd.find(systemroot) then
+
+    if string.find(cmdWd, systemroot) then
         print(
             functionName ..
             ': The editor working directory is ' ..
@@ -26,7 +31,33 @@ function TestWorkingDir(functionName)
         )
         return 0
     end
+
     return 1
+end
+
+function RunPowerShell(cmd)
+    local pipe = io.popen('powershell.exe -Command "' .. cmd .. '"')
+    local outputs = {}
+
+    for output in pipe:lines() do
+        table.insert(outputs, output)
+    end
+
+    return outputs
+end
+
+function ToSingleLineString(myTable, delim)
+    str = ""
+
+    for _, value in pairs(myTable) do
+        str = str .. value .. delim
+    end
+
+    return str
+end
+
+function GetPowerShellSingleString(cmd)
+    return trim(ToSingleLineString(RunPowerShell(cmd), ''))
 end
 
 -- Requires: powershell cmdlet:Save-ClipboardToImageFormat
@@ -35,18 +66,15 @@ end
 --   C:\devlib\powershell\PsMarkdown\*
 function SaveImage()
     local fname = 'SaveImage'
+
     if not TestWorkingDir(fname) then
         return
     end
-    local pwshCmd = script_path() .. '../pwsh/Save-Image.ps1'
+
+    local pwshCmd = script_path() .. 'nvim/pwsh/Save-Image.ps1'
     print(fname .. ': Running PowerShell...')
-    local pipe = execute('powershell.exe -Command ', pwshCmd)
-    print(trim(pipe))
-    vim.api.nvim_feedkeys(
-        special('<CR>') .. 'o' .. special('<ESC>'),
-        'm',
-        true
-    )
+    vim.api.nvim_put({ GetPowerShellSingleString(pwshCmd) }, 'c', true, true)
+    vim.cmd('normal o')
 end
 
 -- Requires: powershell cmdlet:Move-ToTrashFolder
@@ -55,22 +83,27 @@ end
 --   C:\devlib\powershell\PsMarkdown\*
 function RemoveImage()
     local fname = 'RemoveImage'
+
     if not TestWorkingDir(fname) then
         return
     end
+
     local pattern = [[\v\(\zs\w*\/(\w+\/)+\d+(_\d+){3}\.\w+\ze\)]]
     local capture = string.match(vim.fn.getline('.'), pattern)
+
     if capture == nil then
         print(fname .. ': Pattern not found')
         return
     end
+
+    -- TODO
     local pwshCmd =
         "Move-ToTrashFolder -Path '" .. capture .. "' -TrashFolder '__OLD'"
+
     -- delete line under cursor
     replace_current_line({})
     print(fname .. ': Running PowerShell...')
-    local pipe = execute('powershell.exe -Command ', pwshCmd)
-    print(trim(pipe))
+    vim.api.nvim_put({ GetPowerShellSingleString(pwshCmd) }, 'c', true, true)
 end
 
 vim.api.nvim_create_user_command(

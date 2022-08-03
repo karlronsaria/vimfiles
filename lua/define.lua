@@ -38,15 +38,15 @@ function pack(...)
     return {n = select("#", ...), ...}
 end
 
-function execute(shell, cmd)
-    local pipe = io.popen(shell, 'w')
-    pipe:write(cmd)
+function execute(cmd)
+    local pipe = assert(io.popen(cmd, 'r'))
     pipe:close()
     return pipe
 end
 
 function trim(str)
-  return str:gsub('%s+', '')
+  local newStr, _ = string.gsub(str, '%s+', '')
+  return newStr
 end
 
 function system(cmd)
