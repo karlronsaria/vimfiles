@@ -1,4 +1,5 @@
 require('define')
+require('powershell')
 
 function TestWorkingDir(functionName)
     local currentFilePath = vim.fn.expand('%:p')
@@ -33,31 +34,6 @@ function TestWorkingDir(functionName)
     end
 
     return 1
-end
-
-function RunPowerShell(cmd)
-    local pipe = io.popen('powershell.exe -Command "' .. cmd .. '"')
-    local outputs = {}
-
-    for output in pipe:lines() do
-        table.insert(outputs, output)
-    end
-
-    return outputs
-end
-
-function ToSingleLineString(myTable, delim)
-    str = ""
-
-    for _, value in pairs(myTable) do
-        str = str .. value .. delim
-    end
-
-    return str
-end
-
-function GetPowerShellSingleString(cmd)
-    return trim(ToSingleLineString(RunPowerShell(cmd), ''))
 end
 
 -- Requires: powershell cmdlet:Save-ClipboardToImageFormat
