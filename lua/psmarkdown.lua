@@ -1,6 +1,8 @@
 require('define')
 require('powershell')
 
+-- @param functionName string
+-- @return 0|1
 function TestWorkingDir(functionName)
     local currentFilePath = vim.fn.expand('%:p')
 
@@ -18,6 +20,7 @@ function TestWorkingDir(functionName)
             currentFilePath ..
             '; the function cannot be called at this location'
         )
+
         return 0
     end
 
@@ -30,6 +33,7 @@ function TestWorkingDir(functionName)
             cmdWd ..
             '; the function cannot be called at this location'
         )
+
         return 0
     end
 
@@ -37,9 +41,10 @@ function TestWorkingDir(functionName)
 end
 
 -- Requires: powershell cmdlet:Save-ClipboardToImageFormat
--- Location: 
+-- Location:
 --   C:\devlib\powershell\Shortcut.ps1
 --   C:\devlib\powershell\PsMarkdown\*
+-- @return void
 function SaveImage()
     local fname = 'SaveImage'
 
@@ -54,9 +59,10 @@ function SaveImage()
 end
 
 -- Requires: powershell cmdlet:Move-ToTrashFolder
--- Location: 
+-- Location:
 --   C:\devlib\powershell\Shortcut.ps1
 --   C:\devlib\powershell\PsMarkdown\*
+-- @return void
 function RemoveImage()
     local fname = 'RemoveImage'
 

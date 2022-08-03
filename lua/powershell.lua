@@ -1,5 +1,5 @@
---@param cmd string
---@return string array
+-- @param cmd string
+-- @return string array
 function RunPowerShell(cmd)
     local pipe = io.popen('powershell.exe -Command "' .. cmd .. '"')
     local outputs = {}
@@ -11,9 +11,9 @@ function RunPowerShell(cmd)
     return outputs
 end
 
---@param lines string array
---@param delim string
---@return string
+-- @param lines string array
+-- @param delim string
+-- @return string
 function ToSingleLineString(lines, delim)
     str = ""
 
@@ -24,8 +24,8 @@ function ToSingleLineString(lines, delim)
     return str
 end
 
---@param cmd string
---@return string
+-- @param cmd string
+-- @return string
 function GetPowerShellSingleString(cmd)
     return string.gsub(
         ToSingleLineString(RunPowerShell(cmd), ''),
