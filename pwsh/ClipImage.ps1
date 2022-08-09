@@ -54,7 +54,7 @@ function Save-ClipboardToImageFormat {
     return [PsCustomObject]@{
         Success = $true
         Path = $item_name
-        MarkdownString = "![$FileName](/$($item_path.Replace('\', '/')))"
+        MarkdownString = "![$FileName]($($item_path.Replace('\', '/')))"
     }
 }
 

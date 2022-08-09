@@ -1,7 +1,7 @@
 -- @param cmd string
 -- @return string array
-function RunPowerShell(cmd)
-    local pipe = io.popen('powershell.exe -Command "' .. cmd .. '"')
+function RunExternal(cmd)
+    local pipe = io.popen(cmd)
     local outputs = {}
 
     for output in pipe:lines() do
@@ -11,10 +11,16 @@ function RunPowerShell(cmd)
     return outputs
 end
 
+-- @param cmd string
+-- @return string
+function RunPowerShell(cmd)
+    return RunExternal('powershell.exe -Command "' .. cmd .. '"')
+end
+
 -- @param lines string array
 -- @param delim string
 -- @return string
-function ToSingleLineString(lines, delim)
+function ToSingleLine(lines, delim)
     str = ""
 
     for _, value in pairs(lines) do
@@ -23,13 +29,3 @@ function ToSingleLineString(lines, delim)
 
     return str
 end
-
--- @param cmd string
--- @return string
-function GetPowerShellSingleString(cmd)
-    return string.gsub(
-        ToSingleLineString(RunPowerShell(cmd), ''),
-        '%s+', ''
-    )
-end
-
