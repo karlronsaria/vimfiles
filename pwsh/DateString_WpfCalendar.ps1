@@ -135,7 +135,7 @@ $prettyFormat = 'd MMMM yyyy'
 $global:__WINDOW_RESULT__ = [PsCustomObject]@{
     Success = $false
     Print = $false
-    Date = ""
+    Date = ''
 }
 
 function Get-SelectedDate {
@@ -229,7 +229,7 @@ $cancel.Add_Click({
 })
 
 $window.Add_PreViewKeyDown({
-    if ($_.Key -eq 'ENTER') {
+    if ($_.Key -eq 'Enter') {
         $global:__WINDOW_RESULT__ = if ($cancel.IsFocused) {
             [PsCustomObject]@{
                 Success = $false
