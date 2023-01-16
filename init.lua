@@ -14,6 +14,7 @@ require('todolist')
 require('psmarkdown')
 require('pscalendar')
 require('markdown')
+require('shortcut')
 
 source('nvim/vim/zettel.vim')
 
