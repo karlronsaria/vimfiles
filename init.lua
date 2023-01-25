@@ -16,5 +16,6 @@ require('pscalendar')
 require('markdown')
 require('shortcut')
 
+source('nvim/vim/setting.vim')
 source('nvim/vim/zettel.vim')
 
