@@ -39,9 +39,43 @@ function PutMarkdownTableDivider()
     vim.api.nvim_put({ outStr }, 'c', true, true)
 end
 
+-- @param line string
+-- @return table
+function GetMarkdownLinkTable(line)
+  local dir = vim.fn.expand('%:p:h')
+  local path = ''
+  local exist = 0
+  local myTable = {}
+
+  for value in string.gmatch(line, "[^()%s]+") do
+    path = value
+    exist = vim.fn.filereadable(path)
+
+    if exist == 0 then
+      path = dir .. '/' .. value
+      exist = vim.fn.filereadable(path)
+    end
+
+    if exist == 1 then
+      table.insert(myTable, path)
+    end
+  end
+
+  return myTable
+end
+
 vim.api.nvim_create_user_command(
-  'Msvinc',
+  'Mdvinc',
   function() PutMarkdownTableDivider() end,
   { nargs = 0 }
 )
 
+vim.api.nvim_create_user_command(
+  'Mdlink',
+  function()
+    for key, value in pairs(GetMarkdownLinkTable(vim.fn.getline('.'))) do
+      print('Mdlink: ' .. value)
+    end
+  end,
+  { nargs = 0 }
+)
