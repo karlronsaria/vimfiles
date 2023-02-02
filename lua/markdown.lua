@@ -1,6 +1,6 @@
 -- karlr (2022_12_31)
 function PutMarkdownTableDivider()
-    local fname = 'GetWhat'
+    local fname = 'PutMarkdownTableDivider'
 
     local currentRowNum = vim.api.nvim__buf_stats(0).current_lnum
     local prevRow = vim.fn.getline(currentRowNum - 1)
