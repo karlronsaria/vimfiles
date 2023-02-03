@@ -19,6 +19,12 @@ end
 
 -- @param cmd string
 -- @return string
+function RunElevatedPowerShell(cmd)
+    return RunExternal('sudo powershell.exe -Command "' .. cmd .. '"')
+end
+
+-- @param cmd string
+-- @return string
 function OpenPowerShell(cmd)
     return os.execute('powershell.exe -NoExit -Command "' .. cmd .. '"')
 end

@@ -42,6 +42,27 @@ function PutMarkdownTableDivider()
     vim.api.nvim_put({ outStr }, 'c', true, true)
 end
 
+function GetLinkTable(line)
+  local myTable = {}
+
+  for value in string.gmatch(line, "[^()\"%s]+") do
+    table.insert(myTable, value)
+  end
+
+  return myTable
+end
+
+function GetRegLinkTable(line)
+  local myTable = {}
+
+  -- todo: extend pattern matching to '(HK|hk)'
+  for value in string.gmatch(line, "HK[^()\"%s]+") do
+    table.insert(myTable, value)
+  end
+
+  return myTable
+end
+
 -- @param line string
 -- @return table
 function GetMarkdownLinkTable(line)
@@ -50,7 +71,7 @@ function GetMarkdownLinkTable(line)
   local exist = 0
   local myTable = {}
 
-  for value in string.gmatch(line, "[^()\"%s]+") do
+  for key, value in pairs(GetLinkTable()) do
     path = value
     exist = vim.fn.filereadable(path)
 
@@ -122,3 +143,20 @@ vim.api.nvim_create_user_command(
   end,
   { nargs = 0 }
 )
+
+-- requires regjump
+vim.api.nvim_create_user_command(
+  'Reglink',
+  function()
+    local pwshCmd = script_path() .. 'nvim/pwsh/Open-Registry.ps1'
+    local cmd = ''
+    local isKey = 0
+    for key, value in pairs(GetRegLinkTable(vim.fn.getline('.'))) do
+      cmd = pwshCmd .. ' -Path "' .. value .. '"'
+      print(cmd)
+      RunElevatedPowerShell(cmd)
+    end
+  end,
+  { nargs = 0 }
+)
+
