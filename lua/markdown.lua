@@ -1,5 +1,5 @@
 require('define')
-require('external')
+require('run')
 
 -- karlr (2022_12_31)
 function PutMarkdownTableDivider()
@@ -50,7 +50,7 @@ function GetMarkdownLinkTable(line)
   local exist = 0
   local myTable = {}
 
-  for value in string.gmatch(line, "[^()%s]+") do
+  for value in string.gmatch(line, "[^()\"%s]+") do
     path = value
     exist = vim.fn.filereadable(path)
 

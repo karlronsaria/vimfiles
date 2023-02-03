@@ -1,5 +1,5 @@
 require('define')
-require('external')
+require('run')
 
 vim.api.nvim_create_user_command(
   'Calendar',

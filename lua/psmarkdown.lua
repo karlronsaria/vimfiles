@@ -1,5 +1,5 @@
 require('define')
-require('external')
+require('run')
 
 -- @param functionName string
 -- @return 0|1
