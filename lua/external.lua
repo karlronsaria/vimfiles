@@ -17,6 +17,12 @@ function RunPowerShell(cmd)
     return RunExternal('powershell.exe -Command "' .. cmd .. '"')
 end
 
+-- @param cmd string
+-- @return string
+function OpenPowerShell(cmd)
+    return os.execute('powershell.exe -NoExit -Command "' .. cmd .. '"')
+end
+
 -- @param lines string array
 -- @param delim string
 -- @return string

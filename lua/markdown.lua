@@ -79,3 +79,43 @@ vim.api.nvim_create_user_command(
   end,
   { nargs = 0 }
 )
+
+vim.api.nvim_create_user_command(
+  'MdlinkClip',
+  function()
+    local list = ''
+    for key, value in pairs(GetMarkdownLinkTable(vim.fn.getline('.'))) do
+      print('MdlinkClip: ' .. value)
+      list = list .. value .. "\n"
+    end
+    vim.fn.setreg('+', list)
+  end,
+  { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+  'MdlinkShell',
+  function()
+    local pwshCmd = script_path() .. 'nvim/pwsh/Open.ps1'
+    local cmd = ''
+    for key, value in pairs(GetMarkdownLinkTable(vim.fn.getline('.'))) do
+      cmd = pwshCmd .. ' -Path "' .. vim.fn.fnamemodify(value, ':h') .. '"'
+      print(cmd)
+      RunPowerShell(cmd)
+    end
+  end,
+  { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+  'MdlinkExplore',
+  function()
+    local cmd = ''
+    for key, value in pairs(GetMarkdownLinkTable(vim.fn.getline('.'))) do
+      cmd = "explorer " .. vim.fn.fnamemodify(value, ':h'):gsub("/", "\\")
+      print(cmd)
+      io.popen(cmd)
+    end
+  end,
+  { nargs = 0 }
+)
