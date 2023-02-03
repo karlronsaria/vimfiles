@@ -15,6 +15,7 @@ require('psmarkdown')
 require('pscalendar')
 require('markdown')
 require('shortcut')
+require('link')
 require('drawingboard')
 
 source('nvim/vim/setting.vim')
