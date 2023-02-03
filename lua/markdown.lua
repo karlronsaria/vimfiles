@@ -1,3 +1,6 @@
+require('define')
+require('external')
+
 -- karlr (2022_12_31)
 function PutMarkdownTableDivider()
     local fname = 'PutMarkdownTableDivider'
