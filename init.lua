@@ -9,7 +9,7 @@
 require('packer-plugins')
 require('define')
 require('setting')
-require('datetime')
+require('os-custom-variable')
 require('todolist')
 require('psmarkdown')
 require('pscalendar')
