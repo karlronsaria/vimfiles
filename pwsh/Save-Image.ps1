@@ -1,4 +1,4 @@
-. $PsScriptRoot\ClipImage.ps1
+. $PsScriptRoot\PsMarkdown\script\ClipImage.ps1
 
 $capture = Save-ClipboardToImageFormat `
     -BasePath (Get-Location).Path `
