@@ -4,7 +4,7 @@ require('run')
 function GetLinkTable(line)
   local myTable = {}
 
-  for value in string.gmatch(line, "[^()\"%s]+") do
+  for value in string.gmatch(line, "[^()\"]+") do
     table.insert(myTable, value)
   end
 
@@ -15,7 +15,7 @@ function GetRegLinkTable(line)
   local myTable = {}
 
   -- todo: extend pattern matching to '(HK|hk)'
-  for value in string.gmatch(line, "HK[^()\"%s]+") do
+  for value in string.gmatch(line, "HK[^()\"]+") do
     table.insert(myTable, value)
   end
 
@@ -105,7 +105,7 @@ vim.api.nvim_create_user_command(
     local cmd = ''
     local isKey = 0
     for key, value in pairs(GetRegLinkTable(vim.fn.getline('.'))) do
-      cmd = pwshCmd .. ' -Path "' .. value .. '"'
+      cmd = pwshCmd .. ' -Path \'' .. value .. '\''
       print(cmd)
       RunElevatedPowerShell(cmd)
     end
