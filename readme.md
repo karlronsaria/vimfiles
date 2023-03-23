@@ -6,6 +6,17 @@
 
 # issue
 
+- [ ] 2023_03_22_190240
+  - howto
+    - command: ``:LinkReg``
+    - line: ``"Where": "HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths",``
+  - expected
+    - ``HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths``
+  - actual
+    - ``HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion``
+
+# issue
+
 - [x] 2023_01_25_153756
 
   - howto
