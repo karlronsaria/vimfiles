@@ -1,0 +1,65 @@
+# issue
+
+- [ ] 2023_05_03_133526
+  - howto
+    - in program annotations
+      ```cpp
+      // [ ] issue 2023_05_03_133202
+      ```
+    - keystroke: ``:Item``
+  - actual
+    ```
+    Pattern not found
+    ```
+
+- [ ] 2023_03_22_190240
+  - howto
+    - command: ``:LinkReg``
+    - line: ``"Where": "HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths",``
+  - expected
+    - ``HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths``
+  - actual
+    - ``HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion``
+
+- [x] 2023_01_25_153756
+  - howto
+    ``nvim``
+  - actual
+    ```
+    Error detected while processing C:\Users\karlr\AppData\Local\nvim\init.lua:
+    E5113: Error while calling lua chunk: C:\Users\karlr\AppData\Local\nvim/lua/define.lua:9: Vim(edit):E499: Empty file name for '%' or '#', only works with ":p:h": :ed ++ff=dos
+    stack traceback:
+            [C]: in function 'cmd'
+            C:\Users\karlr\AppData\Local\nvim/lua/define.lua:9: in function 'source'
+            C:\Users\karlr\AppData\Local\nvim\init.lua:19: in main chunk
+    Press ENTER or type command to continue
+    ```
+
+- [ ] 2022_12_16
+  - howto
+    - keystroke: ``:Item``
+  - actual
+    ```
+    ### todo
+    - [x] cash cheques
+       ~
+      - [x] ``A`` emp: tell Cindy I have cheques that need to be deposited
+         ~
+
+    ### !emp
+    - [x] see [``todo A``](#todo)
+       ~~~~~~~~~~~~~~~~~~
+    ```
+  - expected
+    ```
+    ### todo
+    - [x] cash cheques
+       ~
+      - [x] ``A`` emp: tell Cindy I have cheques that need to be deposited
+         ~
+
+    ### !emp
+    - [x] see [``todo A``](#todo)
+       ~
+    ```
+
