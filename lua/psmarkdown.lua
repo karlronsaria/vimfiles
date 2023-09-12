@@ -54,7 +54,7 @@ function SaveImage()
 
     local pwshCmd = script_path() .. 'nvim/pwsh/Save-Image.ps1'
     print(fname .. ': Running PowerShell...')
-    vim.api.nvim_put({ ToSingleLine(RunPowerShell(pwshCmd), '') }, 'c', true, true)
+    vim.api.nvim_put(RunPowerShell(pwshCmd), 'c', true, true)
     vim.cmd('normal o')
 end
 
@@ -85,7 +85,7 @@ function RemoveImage()
     -- delete line under cursor
     replace_current_line({})
     print(fname .. ': Running PowerShell...')
-    vim.api.nvim_put({ ToSingleLine(RunPowerShell(pwshCmd), '') }, 'c', true, true)
+    vim.api.nvim_put({ Join('', RunPowerShell(pwshCmd)) }, 'c', true, true)
 end
 
 vim.api.nvim_create_user_command(

@@ -32,7 +32,7 @@ end
 -- @param lines string array
 -- @param delim string
 -- @return string
-function ToSingleLine(lines, delim)
+function Join(delim, lines)
     str = ""
 
     for _, value in pairs(lines) do
