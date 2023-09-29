@@ -4,7 +4,7 @@ vim.api.nvim_create_user_command(
   'Item',
   function()
     vim.api.nvim_feedkeys(
-      [[/\v^(\s*(\*|\-|\d+\.|[^\w\s]+))? \[\zs[^\]\[]{,3}\ze]] .. '\\]' .. special('<CR>'),
+      [[/\v^(\s*(\*|\-|\d+\.|[^\w\s]+))? \[\zs[^\]\[]{1,3}\ze]] .. '\\]' .. special('<CR>'),
       'm', true
 
       -- -- OLD (karlr 2023_09_28_210418)
