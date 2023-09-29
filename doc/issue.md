@@ -12,7 +12,7 @@
     Pattern not found
     ```
 
-- [ ] 2023_03_22_190240
+- [x] 2023_03_22_190240
   - howto
     - command: ``:LinkReg``
     - line: ``"Where": "HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths",``
