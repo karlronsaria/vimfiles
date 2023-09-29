@@ -1,6 +1,8 @@
 # issue
 
-- [ ] 2023_05_03_133526
+## resolved
+
+- [x] 2023_05_03_133526
   - howto
     - in program annotations
       ```cpp
@@ -35,7 +37,7 @@
     Press ENTER or type command to continue
     ```
 
-- [ ] 2022_12_16
+- [x] 2022_12_16
   - howto
     - keystroke: ``:Item``
   - actual
