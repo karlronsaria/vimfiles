@@ -2,6 +2,20 @@
 
 ## resolved
 
+- [ ] 2023_10_17_003551
+  - what
+    - function: ``gf``
+  - howto
+    - in ``*.md``
+      ```
+      - where: "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.17.11461.0_x64__8wekyb3d8bbwe\ProfileIcons"
+      ```
+    - in nvim editor: ``gf``
+  - actual
+    ```
+    E447: Can't find file "Files\WindowsApps\Microsoft.WindowsTerminal_1.17.11461.0_x64__8wekyb3d8bbwe\ProfileIcons" in path
+    ```
+
 - [x] 2023_05_03_133526
   - howto
     - in program annotations
