@@ -5,6 +5,7 @@ function GetLinkTable(line)
   local myTable = {}
 
   for value in string.gmatch(line, "[^()\"]+") do
+    value = value:gsub("\\ ", " ")
     table.insert(myTable, value)
   end
 
@@ -28,7 +29,7 @@ function GetSystemLinkTable(line)
   local dir = vim.fn.expand('%:p:h')
   local path = ''
   local exist = 0
-  local myTable = {}
+  local paths = {}
 
   for key, value in pairs(GetLinkTable(line)) do
     path = value
@@ -40,11 +41,11 @@ function GetSystemLinkTable(line)
     end
 
     if exist == 1 then
-      table.insert(myTable, path)
+      table.insert(paths, path)
     end
   end
 
-  return myTable
+  return paths
 end
 
 vim.api.nvim_create_user_command(
