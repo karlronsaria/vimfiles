@@ -41,3 +41,7 @@ vim.cmd([[
 -- retrieved: 2022_07_26
 nmap("<c-z>", "<nop>")
 
+-- link: https://stackoverflow.com/questions/15449591/vim-execute-current-file
+-- retrieved: 2023_10_18
+nmap("<f9>", ":!%:p<cr>")
+
