@@ -5,6 +5,7 @@
     - retrieved: 2023_09_28
   - howto
     - Windows
+
       ```powershell
       git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
       ```
@@ -25,3 +26,4 @@
 
 ---
 [Issues Page](./doc/issue.md)
+[Wishlist Page](./doc/wish.md)

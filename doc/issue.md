@@ -1,7 +1,5 @@
 # issue
 
-## resolved
-
 - [ ] 2023_10_17_003551
   - what
     - function: ``gf``
@@ -15,6 +13,8 @@
     ```
     E447: Can't find file "Files\WindowsApps\Microsoft.WindowsTerminal_1.17.11461.0_x64__8wekyb3d8bbwe\ProfileIcons" in path
     ```
+
+## resolved
 
 - [x] 2023_05_03_133526
   - howto

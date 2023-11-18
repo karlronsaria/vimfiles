@@ -20,22 +20,32 @@ local pattern = [[/\v^(\s*(\*|\-|\d+\.|[^\w\s]+))? \[\zs<token>\ze]] .. '\\]'
 
 vim.api.nvim_create_user_command(
   'Item',
-  function()
+  function(opts)
     vim.api.nvim_feedkeys(
-      pattern:gsub("<token>", [[[^\]\[]{1,3}]]) .. special('<CR>'), 'm', true
+      pattern:gsub("<token>", [[[^\]\[]{1,3}]])
+        .. [[\s.*]]
+        .. (#opts.fargs > 0 and opts.fargs[1] or "")
+        .. special('<CR>'),
+      'm',
+      true
     )
   end,
-  { nargs = 0 }
+  { nargs = '?' }
 )
 
 vim.api.nvim_create_user_command(
   'Todo',
-  function()
+  function(opts)
     vim.api.nvim_feedkeys(
-      pattern:gsub("<token>", [[ ]]) .. special('<CR>'), 'm', true
+      pattern:gsub("<token>", [[ ]])
+        .. [[\s.*]]
+        .. (#opts.fargs > 0 and opts.fargs[1] or "")
+        .. special('<CR>'),
+      'm',
+      true
     )
   end,
-  { nargs = 0 }
+  { nargs = '?' }
 )
 
 vim.api.nvim_create_user_command(

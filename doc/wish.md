@@ -1,2 +1,5 @@
 # I Wish
-- [ ] ``Item`` command had a parameter for search-narrowing
+- [x] ``Item`` command had a parameter for search-narrowing
+
+---
+[← Go Back](../readme.md)

@@ -6,8 +6,8 @@ return require('packer').startup(function(use)
     -- packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- tools
     use 'stsewd/gx-extended.vim'
-
     use 'stevedonovan/winapi'
     use 'sheerun/vim-polyglot'
     use 'vimwiki/vimwiki'
@@ -16,4 +16,8 @@ return require('packer').startup(function(use)
 
     -- colorscheme
     use 'gruvbox-community/gruvbox'
+
+    -- tpope 2023_11_17
+    use 'tpope/vim-surround'
+    use 'tpope/vim-repeat'
 end)
