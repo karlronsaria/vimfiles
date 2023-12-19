@@ -9,9 +9,3 @@ return $capture | where {
 } | foreach {
     $_.MarkdownString
 }
-
-# # todo
-# if ($capture.Success) {
-#     return $capture.MarkdownString
-# }
-
