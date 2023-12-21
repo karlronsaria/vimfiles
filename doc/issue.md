@@ -1,5 +1,17 @@
 # issue
 
+- [ ] 2023_12_21_031304
+  - where
+    - function: ``Img``
+  - howto
+    - generate current file in editor by calling write-to: ``":w"``
+  - actual
+    - saves images to ``.\res\`` in ``C:\Users\karlr\``
+  - expected
+    - saves images to ``.\res\`` in working directory of file
+  - problem
+    - unable to locate working directory of file when creating file in nvim editor
+
 - [ ] 2023_10_17_003551
   - what
     - function: ``gf``
