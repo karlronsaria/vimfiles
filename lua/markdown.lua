@@ -1,10 +1,16 @@
--- karlr (2022_12_31)
+-- (karlr 2022_12_31)
 function PutMarkdownTableDivider()
     local fname = 'PutMarkdownTableDivider'
 
-    local currentRowNum = vim.api.nvim__buf_stats(0).current_lnum
+    -- -- OLD (karlr 2023_12_25)
+    --  # link
+    --  - url: <https://vi.stackexchange.com/questions/31189/how-can-i-get-the-current-cursor-position-in-lua>
+    --  - retrieved: 2023_12_25
+    -- local currentRowNum = vim.api.nvim__buf_stats(0).current_lnum
+    local currentRowNum, _ = unpack(vim.api.nvim_win_get_cursor(0))
     local prevRow = vim.fn.getline(currentRowNum - 1)
 
+    print('Previous number: ' .. currentRowNum)
     print('Previous row: ' .. prevRow)
 
     local leadingWhitespace = string.match(prevRow, [[%s*]])
