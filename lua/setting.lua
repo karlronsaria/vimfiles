@@ -4,7 +4,7 @@ require('define')
 -- vim.g.mapleader = "\\"
 
 -- Enable syntax highlighting
-vim.o.syntax = true
+vim.o.syntax = "on"
 
 -- Change tabs
 vim.o.expandtab = true
