@@ -23,7 +23,11 @@
 - From init.vim to init.lua - a crash course
   - url: https://www.notonlycode.org/neovim-lua-config/
   - retrieved: 2023_09_28
+- vimfiles
+  - url: <https://www.youtube.com/watch?v=-esgEOqwzVg&t=253s>
+  - retrieved: 2022_07_30
 
 ---
+[PowerShell Files (pwsh)](./pwsh/readme.md)
 [Issues Page](./doc/issue.md)
 [Wishlist Page](./doc/wish.md)
