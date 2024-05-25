@@ -1,4 +1,3 @@
-
 " change fileformat to dos
 " - link
 "   - url
@@ -7,6 +6,7 @@
 "   - retrieved: 2023_01_25
 
 :set fileformat=dos
+:set number relativenumber
 
 " " karlr (2023_02_05)
 " :ed ++ff=dos %

@@ -4,7 +4,20 @@ require('run')
 function GetLinkTable(line)
   local myTable = {}
 
-  for value in string.gmatch(line, "[^()\"]+") do
+  print('File type: ' .. vim.bo.filetype)
+  print('Line: ' .. line)
+
+  local ext = vim.bo.filetype
+
+  if ext == 'md' then
+    pattern = "[^()\"]+"
+  elseif ext == 'json' then
+    -- pattern = "\"[^\"]+\"(,|})?%s*$"
+    pattern = "[^\"]+"
+  end
+
+  -- todo
+  for value in string.gmatch(line, pattern) do
     value = value:gsub("\\ ", " ")
     table.insert(myTable, value)
   end

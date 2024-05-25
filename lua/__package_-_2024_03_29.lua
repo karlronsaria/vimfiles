@@ -5,8 +5,8 @@ local packages = {
     -- tools
     'stsewd/gx-extended.vim',
     'stevedonovan/winapi',
-    'sheerun/vim-polyglot',
-    'vimwiki/vimwiki',
+    -- 'sheerun/vim-polyglot',
+    -- 'vimwiki/vimwiki',
     'kristijanhusak/vim-simple-notifications',
     'powerline/powerline',
 
@@ -25,9 +25,21 @@ local packages = {
     'williamboman/mason.nvim',
 }
 
--- setup
---   powershell:
---     git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+-- - link
+--   - url: <https://linovox.com/install-and-use-packer-in-neovim/>
+--   - retrieved: 2024_03_29
+--
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+    return
+end
+
+-- - setup
+--
+-- ```powershell
+-- git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+-- ```
 --
 return require'packer'.startup(function(use)
     for _, package in pairs(packages) do

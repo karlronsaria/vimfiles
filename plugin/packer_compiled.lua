@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\share\\lua\\5.1\\?.lua;C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
-local install_cpath_pattern = "C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1696883897\\lib\\lua\\5.1\\?.so"
+local package_path_str = "C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1703942320\\share\\lua\\5.1\\?.lua;C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1703942320\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1703942320\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1703942320\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\karlr\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.1703942320\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -74,80 +74,15 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  gruvbox = {
+  ["mason.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox",
-    url = "https://github.com/gruvbox-community/gruvbox"
-  },
-  ["gx-extended.vim"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gx-extended.vim",
-    url = "https://github.com/stsewd/gx-extended.vim"
-  },
-  ["masom.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\masom.nvim",
-    url = "https://github.com/williamboman/masom.nvim"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
-  },
-  ["nvim-lspconfig"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
-    url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
     path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  powerline = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\powerline",
-    url = "https://github.com/powerline/powerline"
-  },
-  ["tree-sitter-PowerShell"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tree-sitter-PowerShell",
-    url = "https://github.com/PowerShell/tree-sitter-PowerShell"
-  },
-  ["vim-polyglot"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-polyglot",
-    url = "https://github.com/sheerun/vim-polyglot"
-  },
-  ["vim-repeat"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-repeat",
-    url = "https://github.com/tpope/vim-repeat"
-  },
-  ["vim-simple-notifications"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-simple-notifications",
-    url = "https://github.com/kristijanhusak/vim-simple-notifications"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-surround",
-    url = "https://github.com/tpope/vim-surround"
-  },
-  vimwiki = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vimwiki",
-    url = "https://github.com/vimwiki/vimwiki"
-  },
-  winapi = {
-    loaded = true,
-    path = "C:\\Users\\karlr\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\winapi",
-    url = "https://github.com/stevedonovan/winapi"
   }
 }
 

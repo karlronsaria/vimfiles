@@ -7,7 +7,8 @@
 --   - <https://github.com/nanotee/nvim-lua-guide>
 -- - retrieved: 2022_07_30
 
-require('package')
+require('my-package')
+require('ast')
 require('define')
 require('setting')
 require('datetime')
@@ -19,7 +20,6 @@ require('markdown')
 require('shortcut')
 require('link')
 require('drawingboard')
-require('ast')
 
 source('nvim/vim/setting.vim')
 source('nvim/vim/zettel.vim')

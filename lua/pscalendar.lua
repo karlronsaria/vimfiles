@@ -10,7 +10,7 @@ vim.api.nvim_create_user_command(
       return
     end
 
-    local dateStr = ToSingleLine(RunPowerShell(cmd), '')
+    local dateStr = Join('', RunPowerShell(cmd))
 
     print(dateStr)
     local start, len = string.find(dateStr, '%d%d%d%d_%d%d_%d%d')
