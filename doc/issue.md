@@ -1,5 +1,22 @@
 # issue
 
+- [ ] 2024_06_18_204333
+  - where
+    - ``LinkExplore``
+  - howto
+    - command ``LinkExplore`` with cursor over
+
+      ```markdown
+      - [howto](./howto/howto_-_2024_06_18_Cuisinart_CleanCoffeeMaker.md)
+      ```
+
+  - actual
+
+    ```text
+    File type: markdown
+    Line:     - [howto](./howto/howto_-_2024_06_18_Cuisinart_CleanCoffeeMaker.md)                                                Error executing Lua callback: C:\Users\karlr\AppData\Local\nvim/lua/link.lua:20: bad argument #2 to 'gmatch' (string expected, got nil)                                                                                                                   stack traceback:                                                                                                                     [C]: in function 'gmatch'                                                                                                    C:\Users\karlr\AppData\Local\nvim/lua/link.lua:20: in function 'GetLinkTable'                                                C:\Users\karlr\AppData\Local\nvim/lua/link.lua:47: in function 'GetSystemLinkTable'                                          C:\Users\karlr\AppData\Local\nvim/lua/link.lua:105: in function <C:\Users\karlr\AppData\Local\nvim/lua/link.lua:103> Press ENTER or type command to continue
+    ```
+
 - [ ] 2023_12_21_031304
   - where
     - function: ``Img``
