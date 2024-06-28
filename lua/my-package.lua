@@ -64,8 +64,8 @@ local packages = {
     'tpope/vim-repeat',
 
     -- ast 2023_12_07
-    'nvim-treesitter/nvim-treesitter',
-    'PowerShell/tree-sitter-PowerShell',
+    -- 'nvim-treesitter/nvim-treesitter',
+    -- 'PowerShell/tree-sitter-PowerShell',
     'neovim/nvim-lspconfig',
     -- 'williamboman/nvim-lsp-installer', -- No longer maintained
     'williamboman/mason.nvim',

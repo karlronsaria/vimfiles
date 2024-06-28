@@ -1,3 +1,4 @@
+. $PsScriptRoot\PsMarkdown\script\Other.ps1
 . $PsScriptRoot\PsMarkdown\script\ClipImage.ps1
 
 $capture = Save-ClipboardToImageFormat `
