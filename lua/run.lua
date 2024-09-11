@@ -17,10 +17,22 @@ function RunPowerShell(cmd)
     return RunExternal('powershell.exe -Command "' .. cmd .. '"')
 end
 
+-- @param cmd string
+-- @return string
+function RunElevatedPowerShell(cmd)
+    return RunExternal('sudo powershell.exe -Command "' .. cmd .. '"')
+end
+
+-- @param cmd string
+-- @return string
+function OpenPowerShell(cmd)
+    return os.execute('powershell.exe -NoExit -Command "' .. cmd .. '"')
+end
+
 -- @param lines string array
 -- @param delim string
 -- @return string
-function ToSingleLine(lines, delim)
+function Join(delim, lines)
     str = ""
 
     for _, value in pairs(lines) do
@@ -29,3 +41,4 @@ function ToSingleLine(lines, delim)
 
     return str
 end
+

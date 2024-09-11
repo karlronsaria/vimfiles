@@ -1,0 +1,3 @@
+[submodule "pwsh/PsMarkdown"]
+	path = pwsh/PsMarkdown
+	url = https://github.com/karlronsaria/PsMarkdown

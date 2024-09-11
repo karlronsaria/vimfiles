@@ -1,10 +1,12 @@
-. $PsScriptRoot\ClipImage.ps1
+. $PsScriptRoot\PsMarkdown\script\Other.ps1
+. $PsScriptRoot\PsMarkdown\script\ClipImage.ps1
 
 $capture = Save-ClipboardToImageFormat `
     -BasePath (Get-Location).Path `
     -ErrorAction SilentlyContinue
 
-if ($capture.Success) {
-    return $capture.MarkdownString
+return $capture | where {
+    $_.Success
+} | foreach {
+    $_.MarkdownString
 }
-
