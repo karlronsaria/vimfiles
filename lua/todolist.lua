@@ -1,9 +1,5 @@
 require('define')
 
-function is_in_vscode()
-    return vim.fn.getenv("VSCODE_PID") ~= vim.NIL
-end
-
 -- [[/\v^(\s*(\*|\-|\d+\.|[^\w\s]+))? \[\zs[^\]\[]{1,3}\ze]] .. '\\]' .. special('<CR>'),
 
 -- -- OLD (karlr 2023_09_28_210418)
