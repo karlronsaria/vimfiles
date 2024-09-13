@@ -2,16 +2,22 @@
 
 ## setup
 
-- install ``packer.vim``
-  - link
-    - url: <https://github.com/wbthomason/packer.nvim>
-    - retrieved: 2023_09_28
-  - howto
-    - Windows
+1. initialize submodules
 
-      ```powershell
-      git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
-      ```
+   ```powershell
+   git submodule update --init --recursive
+   ```
+
+2. install ``packer.vim``
+   - link
+     - url: <https://github.com/wbthomason/packer.nvim>
+     - retrieved: 2023_09_28
+   - howto
+     - Windows
+
+       ```powershell
+       git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+       ```
 
 ## credit
 
