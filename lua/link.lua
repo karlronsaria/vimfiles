@@ -8,6 +8,7 @@ function GetLinkTable(line)
   print('Line: ' .. line)
 
   local ext = vim.bo.filetype
+  local pattern = ".*"
 
   if ext == 'md' then
     pattern = "[^()\"]+"

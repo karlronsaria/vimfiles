@@ -8,6 +8,7 @@
 -- - retrieved: 2022_07_30
 
 require('my-package')
+require('my-vscode')
 require('ast')
 require('define')
 require('setting')
