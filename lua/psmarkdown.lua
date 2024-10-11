@@ -40,6 +40,29 @@ function TestWorkingDir(functionName)
     return 1
 end
 
+function CancelItem(line)
+    local fname = 'CancelName'
+
+    local pwshCmd = script_path()
+        .. 'nvim/pwsh/ConvertTo-CanceledItem.ps1 -InputString '
+        .. [[']] .. line .. [[']]
+
+    print(fname .. ': Running PowerShell...')
+    return RunPowerShellNoProfile(pwshCmd)
+end
+
+-- (karlr 2024_10_10)
+-- Requires: powershell cmdlet:ConvertTo-MarkdownCanceledItem
+-- Location:
+--   C:\devlib\powershell\WorkList.ps1
+--   C:\devlib\powershell\PsMarkdown\*
+-- @return void
+function CancelItemOnLine()
+    local line_num = vim.api.nvim_win_get_cursor(0)[1]
+    local line = vim.api.nvim_buf_get_lines(0, line_num - 1, line_num, false)[1]
+    vim.api.nvim_buf_set_lines(0, line_num - 1, line_num, false, CancelItem(line))
+end
+
 -- Requires: powershell cmdlet:Save-ClipboardToImageFormat
 -- Location:
 --   C:\devlib\powershell\Shortcut.ps1
@@ -98,6 +121,12 @@ vim.api.nvim_create_user_command(
   'Rimg',
   function() RemoveImage() end,
   { nargs = 0 }
+)
+
+vim.api.nvim_create_user_command(
+  'Strike',
+  function() CancelItemOnLine() end,
+  { nargs = 0, range = false }
 )
 
 -- vim.api.nvim_create_user_command(

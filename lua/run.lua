@@ -19,6 +19,12 @@ end
 
 -- @param cmd string
 -- @return string
+function RunPowerShellNoProfile(cmd)
+    return RunExternal('powershell.exe -NoProfile -Command "' .. cmd .. '"')
+end
+
+-- @param cmd string
+-- @return string
 function RunElevatedPowerShell(cmd)
     return RunExternal('sudo powershell.exe -Command "' .. cmd .. '"')
 end
