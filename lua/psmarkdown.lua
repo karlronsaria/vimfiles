@@ -40,6 +40,12 @@ function TestWorkingDir(functionName)
     return 1
 end
 
+-- (karlr 2024_10_10)
+-- Requires: powershell cmdlet:ConvertTo-MarkdownCanceledItem
+-- Location:
+--   C:\devlib\powershell\WorkList.ps1
+--   C:\devlib\powershell\PsMarkdown\*
+-- @return void
 function CancelItem(line)
     local fname = 'CancelName'
 
@@ -47,20 +53,21 @@ function CancelItem(line)
         .. 'nvim/pwsh/ConvertTo-CanceledItem.ps1 -InputString '
         .. [[']] .. line .. [[']]
 
-    print(fname .. ': Running PowerShell...')
     return RunPowerShellNoProfile(pwshCmd)
 end
 
--- (karlr 2024_10_10)
--- Requires: powershell cmdlet:ConvertTo-MarkdownCanceledItem
--- Location:
---   C:\devlib\powershell\WorkList.ps1
---   C:\devlib\powershell\PsMarkdown\*
--- @return void
-function CancelItemOnLine()
-    local line_num = vim.api.nvim_win_get_cursor(0)[1]
+function CancelItemOnLine(line_num)
     local line = vim.api.nvim_buf_get_lines(0, line_num - 1, line_num, false)[1]
     vim.api.nvim_buf_set_lines(0, line_num - 1, line_num, false, CancelItem(line))
+end
+
+function CancelItemsInSelection()
+    local start_pos = vim.fn.getpos("'<")[2] -- start line
+    local end_pos = vim.fn.getpos("'>")[2] -- end line
+
+    for line_num = start_pos, end_pos do
+        CancelItemOnLine(line_num)
+    end
 end
 
 -- Requires: powershell cmdlet:Save-ClipboardToImageFormat
@@ -113,25 +120,28 @@ end
 
 vim.api.nvim_create_user_command(
   'Img',
-  function() SaveImage() end,
+  SaveImage,
   { nargs = 0 }
 )
 
 vim.api.nvim_create_user_command(
   'Rimg',
-  function() RemoveImage() end,
+  RemoveImage,
   { nargs = 0 }
 )
 
 vim.api.nvim_create_user_command(
   'Strike',
-  function() CancelItemOnLine() end,
+  function()
+    local line_num = vim.api.nvim_win_get_cursor(0)[1]
+    CancelItemOnLine(line_num)
+  end,
   { nargs = 0, range = false }
 )
 
--- vim.api.nvim_create_user_command(
---   'Test',
---   function() TestWorkingDir('Test') end,
---   { nargs = 0 }
--- )
+vim.api.nvim_create_user_command(
+  'StrikeAll',
+  CancelItemsInSelection,
+  { nargs = 0, range = true }
+)
 
