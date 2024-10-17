@@ -45,6 +45,16 @@
 
 ## resolved
 
+- [x] 2024_10_17_023317
+  - where
+    - ``Mdvinc``
+  - actual
+
+    ```text
+    | prev rep | prev weight | | rep | weigth |
+    |----------|-------------|-----|--------|
+    ```
+
 - [x] 2023_05_03_133526
   - howto
     - in program annotations
