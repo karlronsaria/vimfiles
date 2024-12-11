@@ -6,6 +6,10 @@ end
 -- @param file string
 -- @return void
 function source(file)
+  if script_path() == nil then
+    return
+  end
+
   vim.cmd('source ' .. script_path() .. file)
 end
 
