@@ -50,7 +50,7 @@ function CancelItem(line)
     local fname = 'CancelName'
 
     local pwshCmd = script_path()
-        .. 'nvim/pwsh/ConvertTo-CanceledItem.ps1 -InputString '
+        .. 'pwsh/ConvertTo-CanceledItem.ps1 -InputString '
         .. [[']] .. line .. [[']]
 
     return RunPowerShellNoProfile(pwshCmd)
@@ -82,7 +82,7 @@ function SaveImage()
         return
     end
 
-    local pwshCmd = script_path() .. 'nvim/pwsh/Save-Image.ps1'
+    local pwshCmd = script_path() .. 'pwsh/Save-Image.ps1'
     print(fname .. ': Running PowerShell...')
     vim.api.nvim_put(RunPowerShell(pwshCmd), 'c', true, true)
     vim.cmd('normal o')

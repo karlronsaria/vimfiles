@@ -4,7 +4,7 @@ require('run')
 vim.api.nvim_create_user_command(
   'Calendar',
   function()
-    local cmd = script_path() .. 'nvim/pwsh/Get-DateStringFromCalendar.ps1'
+    local cmd = script_path() .. 'pwsh/Get-DateStringFromCalendar.ps1'
 
     if ('' == cmd) then
       return

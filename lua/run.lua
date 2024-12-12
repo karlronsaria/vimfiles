@@ -1,3 +1,5 @@
+psapp = "pwsh"
+
 -- @param cmd string
 -- @return string array
 function RunExternal(cmd)
@@ -14,25 +16,25 @@ end
 -- @param cmd string
 -- @return string
 function RunPowerShell(cmd)
-    return RunExternal('powershell.exe -Command "' .. cmd .. '"')
+    return RunExternal(psapp .. ' -Command "' .. cmd .. '"')
 end
 
 -- @param cmd string
 -- @return string
 function RunPowerShellNoProfile(cmd)
-    return RunExternal('powershell.exe -NoProfile -Command "' .. cmd .. '"')
+    return RunExternal(psapp .. ' -NoProfile -Command "' .. cmd .. '"')
 end
 
 -- @param cmd string
 -- @return string
 function RunElevatedPowerShell(cmd)
-    return RunExternal('sudo powershell.exe -Command "' .. cmd .. '"')
+    return RunExternal('sudo ' .. psapp .. ' -Command "' .. cmd .. '"')
 end
 
 -- @param cmd string
 -- @return string
 function OpenPowerShell(cmd)
-    return os.execute('powershell.exe -NoExit -Command "' .. cmd .. '"')
+    return os.execute(psapp .. ' -NoExit -Command "' .. cmd .. '"')
 end
 
 -- @param lines string array

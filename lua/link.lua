@@ -88,7 +88,7 @@ vim.api.nvim_create_user_command(
 vim.api.nvim_create_user_command(
   'LinkShell',
   function()
-    local pwshCmd = script_path() .. 'nvim/pwsh/Open.ps1'
+    local pwshCmd = script_path() .. 'pwsh/Open.ps1'
     local cmd = ''
     for key, value in pairs(GetSystemLinkTable(vim.fn.getline('.'))) do
       cmd = pwshCmd .. ' -Path "' .. vim.fn.fnamemodify(value, ':h') .. '"'
@@ -116,7 +116,7 @@ vim.api.nvim_create_user_command(
 vim.api.nvim_create_user_command(
   'LinkReg',
   function()
-    local pwshCmd = script_path() .. 'nvim/pwsh/Open-Registry.ps1'
+    local pwshCmd = script_path() .. 'pwsh/Open-Registry.ps1'
     local cmd = ''
     local isKey = 0
     for key, value in pairs(GetRegLinkTable(vim.fn.getline('.'))) do
