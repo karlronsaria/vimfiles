@@ -1,16 +1,6 @@
 -- @return string
 function script_path()
-  -- local path = debug.getinfo(1, "S").source:match("@?(.*\\)")
-
-  -- if path == nil then
-  --   path = debug.getinfo(2, "S").source:sub(2):match(".*/")
-  -- end
-
-  -- todo
   return vim.fn.stdpath("config") .. '/'
-
-  -- path = path .. '../../'
-  -- return path
 end
 
 -- @param file string
