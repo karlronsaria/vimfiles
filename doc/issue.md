@@ -1,5 +1,31 @@
 # issue
 
+- [ ] 2025_01_06_032608
+  - howto
+    - in powershell
+
+      ```powershell
+      start nvim ./PsProfile/readme.md
+      ```
+
+    - in ``PsProfile/readme.md``
+
+      ```powershell
+      # todo
+      - [ ] PS-version-specific modules
+        - ex: ``MeasureCommand.ps1#function:ConvertFrom-Json``
+      ```
+
+  - actual
+
+    ```text
+    W325: Ignoring swapfile from Nvim process 1524
+    Error detected while processing modelines:
+    line    3:
+    E518: Unknown option: ``MeasureCommand.ps1#function
+    Press ENTER or type command to continue 
+    ```
+
 - [ ] 2024_06_18_204333
   - where
     - ``LinkExplore``
