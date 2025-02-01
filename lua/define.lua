@@ -20,7 +20,8 @@ function special(sequence)
 end
 
 ---
--- link: https://www.notonlycode.org/neovim-lua-config/
+-- link
+-- url: <https://www.notonlycode.org/neovim-lua-config/>
 -- retrieved: 2022_07_30
 
 -- @param mode string
@@ -47,7 +48,8 @@ function imap(shortcut, command)
   map('i', shortcut, command)
 end
 
--- link: https://stackoverflow.com/questions/42373969/how-to-pass-a-tuple-as-arguments-to-a-lua-function/42375132#42375132
+-- link
+-- url: <https://stackoverflow.com/questions/42373969/how-to-pass-a-tuple-as-arguments-to-a-lua-function/42375132#42375132>
 -- retrieved: 2022_07_31
 
 function pack(...)

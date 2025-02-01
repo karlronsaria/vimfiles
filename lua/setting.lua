@@ -37,11 +37,13 @@ vim.cmd([[
     autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 ]])
 
--- link: https://vi.stackexchange.com/questions/9831/disable-ctrl-z-in-normal-mode
+-- link
+-- url: <https://vi.stackexchange.com/questions/9831/disable-ctrl-z-in-normal-mode>
 -- retrieved: 2022_07_26
 nmap("<c-z>", "<nop>")
 
--- link: https://stackoverflow.com/questions/15449591/vim-execute-current-file
+-- link
+-- url: <https://stackoverflow.com/questions/15449591/vim-execute-current-file>
 -- retrieved: 2023_10_18
 nmap("<f9>", ":!%:p<cr>")
 
