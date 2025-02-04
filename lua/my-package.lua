@@ -78,7 +78,7 @@ local packages = {
 -- ```
 
 -- Install your plugins here
-return packer.startup(function(use)
+local result = packer.startup(function(use)
     use ("wbthomason/packer.nvim") -- Have packer manage itself
 
     use ('williamboman/mason.nvim')
@@ -93,6 +93,7 @@ return packer.startup(function(use)
 
     -- colorscheme
     use ('gruvbox-community/gruvbox')
+    -- use ('Mofiqul/dracula.nvim')
 
     -- tpope 2023_11_17
     use ('tpope/vim-surround')
@@ -114,3 +115,9 @@ return packer.startup(function(use)
         require("packer").sync()
     end
 end)
+
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
+
+return result
+

@@ -100,7 +100,7 @@ function RemoveImage()
         return
     end
 
-    local pattern = [[\v\(\zs\w*\/(\w+\/)+\d+(_\d+){3}\.\w+\ze\)]]
+    local pattern = [[\v\(\zs\w*\/(\w+\/)+\d+(_\d+){3}\.\w+\ze\)]] -- Uses DateTimeFormat
     local capture = string.match(vim.fn.getline('.'), pattern)
 
     if capture == nil then

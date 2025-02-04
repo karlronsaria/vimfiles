@@ -129,7 +129,7 @@ $copy = $window.FindName("CopyStandardButton")
 $pretty = $window.FindName("CopyPrettyButton")
 $cancel = $window.FindName("CancelButton")
 
-$stdFormat = 'yyyy_MM_dd'
+$stdFormat = 'yyyy_MM_dd' # Uses DateTimeFormat
 $prettyFormat = 'd MMMM yyyy'
 
 $global:__WINDOW_RESULT__ = [PsCustomObject]@{
