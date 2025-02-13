@@ -4,12 +4,10 @@
 -- - by: Ashiqur Rahman
 -- - since: 2023_08_18
 
-local fn = vim.fn
-
 -- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system({
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    PACKER_BOOTSTRAP = vim.fn.system({
         "git",
         "clone",
         "--depth",
@@ -66,6 +64,7 @@ local packages = {
     -- ast 2023_12_07
     -- 'nvim-treesitter/nvim-treesitter',
     -- 'PowerShell/tree-sitter-PowerShell',
+    'williamboman/nvim-lsp-installer',
     'neovim/nvim-lspconfig',
     -- 'williamboman/nvim-lsp-installer', -- No longer maintained
     'williamboman/mason.nvim',
@@ -93,7 +92,14 @@ local result = packer.startup(function(use)
 
     -- colorscheme
     use ('gruvbox-community/gruvbox')
-    -- use ('Mofiqul/dracula.nvim')
+    use ("askfiy/visual_studio_code")
+    use ('Mofiqul/vscode.nvim')
+    use ('Mofiqul/dracula.nvim')
+
+    use {
+        "rockyzhang24/arctic.nvim",
+        requires = { "rktjmp/lush.nvim" }
+    }
 
     -- tpope 2023_11_17
     use ('tpope/vim-surround')
@@ -107,6 +113,26 @@ local result = packer.startup(function(use)
     -- ast 2024_03_30
     use ('noahfrederick/vim-composer')
 
+    -- nvim-cmp 2025_02_10
+    use ('hrsh7th/cmp-nvim-lsp')
+    use ('hrsh7th/cmp-buffer')
+    use ('hrsh7th/cmp-path')
+    use ('hrsh7th/cmp-cmdline')
+
+    use {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "L3MON4D3/LuaSnip"
+        }
+    }
+
+    -- snippet engine 2025_02_10
+    use ('hrsh7th/cmp-vsnip')
+    use ('hrsh7th/vim-vsnip')
+
     -- for _, package in pairs(packages) do
     --     use(package)
     -- end
@@ -118,6 +144,8 @@ end)
 
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme arctic]])
+vim.cmd([[colorscheme dracula]])
 
 return result
 

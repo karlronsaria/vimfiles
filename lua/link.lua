@@ -93,7 +93,7 @@ vim.api.nvim_create_user_command(
     for key, value in pairs(GetSystemLinkTable(vim.fn.getline('.'))) do
       cmd = pwshCmd .. ' -Path "' .. vim.fn.fnamemodify(value, ':h') .. '"'
       print(cmd)
-      RunPowerShell(cmd)
+      RunPowerShellNoProfile(cmd)
     end
   end,
   { nargs = 0 }

@@ -47,3 +47,10 @@ nmap("<c-z>", "<nop>")
 -- retrieved: 2023_10_18
 nmap("<f9>", ":!%:p<cr>")
 
+-- (karlr 2025_02_10)
+-- change the opacity of popup elements
+vim.o.pumblend = 70
+
+-- vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE", blend = 10 }) -- Popup menu
+-- vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#333333", blend = 10 }) -- Selected item
+

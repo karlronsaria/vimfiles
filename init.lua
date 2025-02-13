@@ -10,6 +10,8 @@
 require('my-package')
 require('my-vscode')
 require('ast')
+require('nvim-cmp')
+require('nvim-lsp')
 require('define')
 require('setting')
 require('datetime')

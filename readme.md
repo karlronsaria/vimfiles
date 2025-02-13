@@ -19,6 +19,12 @@
        git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
        ```
 
+3. install other dependencies
+
+   ```powershell
+   choco install -y lua-language-server
+   ```
+
 ## credit
 
 - github.com/DBremen for ``Open-Registry.ps1``

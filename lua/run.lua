@@ -1,4 +1,4 @@
-psapp = "pwsh"
+local psapp = "pwsh"
 
 -- @param cmd string
 -- @return string array
