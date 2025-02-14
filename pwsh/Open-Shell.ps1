@@ -4,8 +4,10 @@ Param(
 )
 
 if ($Path) {
+    # (karlr 2025_02_13)
+    # Change 'powershell' to 'pwsh'
     Start-Process `
-        -FilePath 'powershell' `
+        -FilePath 'pwsh' `
         -ArgumentList @(
             "-NoExit",
             "-Command",
@@ -15,6 +17,9 @@ if ($Path) {
     return
 }
 
+# (karlr 2025_02_13)
+# Change 'powershell' to 'pwsh'
 Start-Process `
-    -FilePath 'powershell' `
+    -FilePath 'pwsh' `
     -ArgumentList "-NoExit"
+
