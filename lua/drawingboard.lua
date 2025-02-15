@@ -1,6 +1,28 @@
 
 -- # DRAWINGBOARD
 
+-- ## 2025_02_14: ?
+
+
+vim.api.nvim_create_user_command(
+    'Dr',
+    function()
+        print("Hello, world!")
+        -- local cmd = ''
+        -- for _, value in pairs(GetSystemLinkTable(vim.fn.getline('.'))) do
+        --     cmd = "start " .. value
+        --     print(cmd)
+        --     io.popen(cmd)
+        -- end
+    end,
+    { nargs = 0 }
+)
+
+
+
+
+
+
 -- ## 2024_10_12: Capturing Visual Mode
 
 function Test()

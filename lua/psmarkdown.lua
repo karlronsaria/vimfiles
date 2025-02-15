@@ -82,7 +82,8 @@ function SaveImage()
         return
     end
 
-    local pwshCmd = script_path() .. 'pwsh/Save-Image.ps1'
+    local currentFilePath = vim.fn.expand('%:p:h')
+    local pwshCmd = script_path() .. 'pwsh/Save-Image.ps1 -BasePath "' .. currentFilePath .. '"'
     print(fname .. ': Running PowerShell...')
     vim.api.nvim_put(RunPowerShellNoProfile(pwshCmd), 'c', true, true)
     vim.cmd('normal o')

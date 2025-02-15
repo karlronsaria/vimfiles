@@ -104,6 +104,9 @@ vim.api.nvim_create_user_command(
             -- -- (karlr 2025_02_13)
             -- cmd = "explorer " .. vim.fn.fnamemodify(value, ':h'):gsub("/", "\\")
 
+            -- link: Open Explorer and Highlight Specific File with PowerShell
+            -- - url: <https://superuser.com/questions/973144/open-explorer-and-highlight-specific-file-with-powershell>
+            -- - retrieved: 2025_02_13
             cmd = "explorer /select," .. vim.fn.fnamemodify(value, ':p')
             print(cmd)
             io.popen(cmd)
