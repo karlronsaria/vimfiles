@@ -51,7 +51,7 @@ function CancelItem(line)
 
     local pwshCmd = script_path()
         .. 'pwsh/ConvertTo-CanceledItem.ps1 -InputString '
-        .. [[']] .. line .. [[']]
+        .. [[']] .. line:gsub([[']], [['']]) .. [[']]
 
     return RunPowerShellNoProfile(pwshCmd)
 end

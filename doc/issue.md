@@ -42,6 +42,28 @@
 
 ## resolved
 
+- [x] 2025_01_29_133609
+  - where: ``StrikeAll``
+  - actual
+
+    ```markdown
+    ~~#### Exception-handling~~
+
+    ~~The user sending the wrong kind of input is one of many ways that *exceptions* can occur in your code.~~
+    ~~An exception is an unexpected event that the program is not prepared for.~~
+    ~~But what happens if they choose 3, or~~ 
+    ```
+
+  - expected
+
+    ```markdown
+    ~~#### Exception-handling~~
+
+    ~~The user sending the wrong kind of input is one of many ways that *exceptions* can occur in your code.~~
+    ~~An exception is an unexpected event that the program is not prepared for.~~
+    ~~But what happens if they choose 3, or~~
+    ```
+
 - [x] 2023_12_21_031304
   - where
     - function: ``Img``
