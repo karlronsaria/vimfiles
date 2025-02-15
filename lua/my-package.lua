@@ -113,9 +113,6 @@ local result = packer.startup(function(use)
     -- ast 2024_03_30
     use ('noahfrederick/vim-composer')
 
-    -- ast 2025_02_15
-    use ('')
-
     -- nvim-cmp 2025_02_10
     use ('hrsh7th/cmp-nvim-lsp')
     use ('hrsh7th/cmp-buffer')
