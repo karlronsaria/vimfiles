@@ -26,21 +26,26 @@
     Press ENTER or type command to continue 
     ```
 
-- [ ] 2023_10_17_003551
+## resolved
+
+- [x] 2023_10_17_003551
+  - cancel
+    - from now on, use Unix- and Json-based path strings: ``"C:/Program\ Files"``
   - what
     - function: ``gf``
   - howto
     - in ``*.md``
-      ```
+
+      ```text
       - where: "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.17.11461.0_x64__8wekyb3d8bbwe\ProfileIcons"
       ```
+
     - in nvim editor: ``gf``
   - actual
-    ```
+
+    ```text
     E447: Can't find file "Files\WindowsApps\Microsoft.WindowsTerminal_1.17.11461.0_x64__8wekyb3d8bbwe\ProfileIcons" in path
     ```
-
-## resolved
 
 - [x] 2025_01_29_133609
   - where: ``StrikeAll``
