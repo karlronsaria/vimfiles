@@ -1,13 +1,13 @@
 function GetDate()
-  return os.date("%Y_%m_%d")
+  return os.date("%Y-%m-%d") -- Uses DateTimeFormat
 end
 
 function GetDateTime()
-  return os.date("%Y_%m_%d_%H%M%S")
+  return os.date("%Y-%m-%d-%H%M%S") -- Uses DateTimeFormat
 end
 
 function GetWeekDate()
-  return os.date("%a %Y_%m_%d")
+  return os.date("%a %Y-%m-%d") -- Uses DateTimeFormat
 end
 
 vim.api.nvim_create_user_command(

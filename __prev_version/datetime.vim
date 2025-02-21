@@ -1,9 +1,9 @@
 :function GetDate()
-:  return strftime('%Y_%m_%d')
+:  return strftime('%Y-%m-%d')
 :endfunction
 
 :function GetDateTime()
-:  return strftime('%Y_%m_%d_%H%M%S')
+:  return strftime('%Y-%m-%d-%H%M%S')
 :endfunction
 
 :command PutDate :put =GetDate()
