@@ -8,10 +8,7 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = vim.fn.system({
-        "git",
-        "clone",
-        "--depth",
-        "1",
+        "git", "clone", "--depth", "1",
         "https://github.com/wbthomason/packer.nvim",
         install_path,
     })
@@ -120,18 +117,27 @@ local result = packer.startup(function(use)
     use ('hrsh7th/cmp-cmdline')
 
     use {
-        "hrsh7th/nvim-cmp",
+        'hrsh7th/nvim-cmp',
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            "L3MON4D3/LuaSnip"
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'L3MON4D3/LuaSnip'
         }
     }
 
     -- snippet engine 2025_02_10
     use ('hrsh7th/cmp-vsnip')
     use ('hrsh7th/vim-vsnip')
+
+    -- telescope 2025_02_16
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.8',
+        -- -- or
+        -- branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
     -- for _, package in pairs(packages) do
     --     use(package)
