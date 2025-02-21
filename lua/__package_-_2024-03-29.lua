@@ -13,11 +13,11 @@ local packages = {
     -- colorscheme
     'gruvbox-community/gruvbox',
 
-    -- tpope 2023_11_17
+    -- tpope 2023-11-17
     'tpope/vim-surround',
     'tpope/vim-repeat',
 
-    -- ast 2023_12_07
+    -- ast 2023-12-07
     'nvim-treesitter/nvim-treesitter',
     'PowerShell/tree-sitter-PowerShell',
     'neovim/nvim-lspconfig',
@@ -27,7 +27,7 @@ local packages = {
 
 -- - link
 --   - url: <https://linovox.com/install-and-use-packer-in-neovim/>
---   - retrieved: 2024_03_29
+--   - retrieved: 2024-03-29
 --
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")

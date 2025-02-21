@@ -40,7 +40,7 @@ regJump HKLMm\xxxxx
 
 .LINK
 Url: https://github.com/DBremen/PowerShellScripts/blob/master/Utils/Open-Registry.ps1
-Retrieved: 2023_02_02
+Retrieved: 2023-02-02
 #>
 function Open-Registry {
     [CmdletBinding()]

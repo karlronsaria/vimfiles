@@ -46,7 +46,7 @@ if status_ok then
   }
 end
 
--- -- (karlr 2023_12_07): I don't know if I like auto-folding.
+-- -- (karlr 2023-12-07): I don't know if I like auto-folding.
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 

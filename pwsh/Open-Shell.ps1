@@ -4,7 +4,7 @@ Param(
 )
 
 if ($Path) {
-    # (karlr 2025_02_13)
+    # (karlr 2025-02-13)
     # Change 'powershell' to 'pwsh'
     Start-Process `
         -FilePath 'pwsh' `
@@ -17,7 +17,7 @@ if ($Path) {
     return
 }
 
-# (karlr 2025_02_13)
+# (karlr 2025-02-13)
 # Change 'powershell' to 'pwsh'
 Start-Process `
     -FilePath 'pwsh' `

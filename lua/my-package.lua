@@ -1,8 +1,8 @@
 -- # link
 -- - url: <https://linovox.com/install-and-use-packer-in-neovim/>
--- - retrieved: 2024_03_29
+-- - retrieved: 2024-03-29
 -- - by: Ashiqur Rahman
--- - since: 2023_08_18
+-- - since: 2023-08-18
 
 -- Automatically install packer
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -54,11 +54,11 @@ local packages = {
     -- colorscheme
     'gruvbox-community/gruvbox',
 
-    -- tpope 2023_11_17
+    -- tpope 2023-11-17
     'tpope/vim-surround',
     'tpope/vim-repeat',
 
-    -- ast 2023_12_07
+    -- ast 2023-12-07
     -- 'nvim-treesitter/nvim-treesitter',
     -- 'PowerShell/tree-sitter-PowerShell',
     'williamboman/nvim-lsp-installer',
@@ -98,19 +98,19 @@ local result = packer.startup(function(use)
         requires = { "rktjmp/lush.nvim" }
     }
 
-    -- tpope 2023_11_17
+    -- tpope 2023-11-17
     use ('tpope/vim-surround')
     use ('tpope/vim-repeat')
 
-    -- ast 2023_12_07
+    -- ast 2023-12-07
     use ('nvim-treesitter/nvim-treesitter')
     use ('PowerShell/tree-sitter-PowerShell')
     use ('neovim/nvim-lspconfig')
 
-    -- ast 2024_03_30
+    -- ast 2024-03-30
     use ('noahfrederick/vim-composer')
 
-    -- nvim-cmp 2025_02_10
+    -- nvim-cmp 2025-02-10
     use ('hrsh7th/cmp-nvim-lsp')
     use ('hrsh7th/cmp-buffer')
     use ('hrsh7th/cmp-path')
@@ -126,11 +126,11 @@ local result = packer.startup(function(use)
         }
     }
 
-    -- snippet engine 2025_02_10
+    -- snippet engine 2025-02-10
     use ('hrsh7th/cmp-vsnip')
     use ('hrsh7th/vim-vsnip')
 
-    -- telescope 2025_02_16
+    -- telescope 2025-02-16
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',

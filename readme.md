@@ -11,7 +11,7 @@
 2. install ``packer.vim``
    - link
      - url: <https://github.com/wbthomason/packer.nvim>
-     - retrieved: 2023_09_28
+     - retrieved: 2023-09-28
    - howto
      - Windows
 
@@ -30,19 +30,19 @@
 - github.com/DBremen for ``Open-Registry.ps1``
 - link
   - url: <https://github.com/DBremen/PowerShellScripts/blob/master/Utils/Open-Registry.ps1>
-  - retrieved: 2023_02_02
+  - retrieved: 2023-02-02
 
 ## link
 
 - Vimscript is dead - How to configure Nvim with Lua!
   - url: <https://www.youtube.com/watch?v=-esgEOqwzVg&t=253s>
-  - retrieved: 2022_07_30
+  - retrieved: 2022-07-30
 - From init.vim to init.lua - a crash course
   - url: <https://www.notonlycode.org/neovim-lua-config/>
-  - retrieved: 2023_09_28
+  - retrieved: 2023-09-28
 - vimfiles
   - url: <https://www.youtube.com/watch?v=-esgEOqwzVg&t=253s>
-  - retrieved: 2022_07_30
+  - retrieved: 2022-07-30
 
 ---
 [PowerShell Files (pwsh)](./pwsh/readme.md)

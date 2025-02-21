@@ -14,14 +14,14 @@ call plug#end()
 
 " tags: #markdown #selfquiz
 " link: https://www.edwinwenink.xyz/posts/50-quiz_yourself_in_vim/
-" retrieved: 2022_03_18
+" retrieved: 2022-03-18
 "
 " Ex:
 "   (1 of 8): **Q**: Why is the triangle mesh so useful for real-time rasterization?
 nnoremap <leader>nq :vimgrep /\*\*Q\*\*/ %<CR>
 
 " link: https://www.edwinwenink.xyz/posts/50-quiz_yourself_in_vim/
-" retrieved: 2022_03_18
+" retrieved: 2022-03-18
 "
 " Paste from quickfix list (handy to collect the questions somewhere)
 nnoremap <leader>pq :execute PasteQuickfix()<CR>
@@ -106,9 +106,9 @@ set ignorecase
 " howto: get word under cursor
 " link: https://stackoverflow.com/questions/1115447/how-can-i-get-the-word-under-the-cursor-and-the-text-of-the-current-line-in-vim
 " link: https://stackoverflow.com/users/5445/christian-c-salvad%c3%b3
-" retrieved: 2022_04_08
+" retrieved: 2022-04-08
 
-" karlr (2022_04_08)
+" karlr (2022-04-08)
 " Search tag under cursor
 nnoremap <leader>si :call feedkeys(":CtrlPTag\r".expand("<cword>"))<CR>
 

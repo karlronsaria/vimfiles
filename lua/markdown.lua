@@ -1,8 +1,8 @@
--- (karlr 2022_12_31)
+-- (karlr 2022-12-31)
 function PutMarkdownTableDivider()
     local fname = 'PutMarkdownTableDivider'
 
-    -- -- OLD (karlr 2023_12_25)
+    -- -- OLD (karlr 2023-12-25)
     --  # link
     --  - url: <https://vi.stackexchange.com/questions/31189/how-can-i-get-the-current-cursor-position-in-lua>
     -- local currentRowNum = vim.api.nvim__buf_stats(0).current_lnum

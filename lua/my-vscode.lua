@@ -12,7 +12,7 @@ end
 
 function notifyFollowLinkInVsCode()
     if is_in_vscode() then
-        print("(karlr 2024_09_25): That sequence does not work in VsCode")
+        print("(karlr 2024-09-25): That sequence does not work in VsCode")
     else
         print("Nah, it'll work.")
     end
@@ -22,7 +22,7 @@ vim.api.nvim_create_user_command(
   'Isvscode', isThisVsCode, { nargs = 0 }
 )
 
--- -- (karlr 2024_09_25): interferes with the original binding
+-- -- (karlr 2024-09-25): interferes with the original binding
 -- vim.api.nvim_set_keymap(
 --     'n', 'gf',
 --     ':lua notifyFollowLinkInVsCode()<CR>',

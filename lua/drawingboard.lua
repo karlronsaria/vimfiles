@@ -1,7 +1,7 @@
 
 -- # DRAWINGBOARD
 
--- ## 2025_02_14: ?
+-- ## 2025-02-14: ?
 
 
 vim.api.nvim_create_user_command(
@@ -23,12 +23,12 @@ vim.api.nvim_create_user_command(
 
 
 
--- ## 2024_10_12: Capturing Visual Mode
+-- ## 2024-10-12: Capturing Visual Mode
 
 function Test()
     -- -- link
     -- -- - url: <https://saintofthe.day/2024/03/13/neovim-lua-visual-select-range/>
-    -- -- - retrieved: 2024_10_12
+    -- -- - retrieved: 2024-10-12
     -- local start_pos = vim.fn.getpos("v") -- start line
     -- local end_pos = vim.fn.getpos(".") -- end line
 
@@ -66,7 +66,7 @@ vim.api.nvim_create_user_command(
 
 -- link
 -- - url: <https://github.com/hrsh7th/nvim-cmp/issues/1017>
--- - retrieved: 2024_10_12
+-- - retrieved: 2024-10-12
 if not table.unpack then
     table.unpack = unpack
 end

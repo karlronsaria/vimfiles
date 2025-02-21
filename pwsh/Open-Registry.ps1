@@ -6,7 +6,7 @@ Requires regjump.
 
 .LINK
 Url: https://learn.microsoft.com/en-us/sysinternals/downloads/regjump
-Retrieved: 2023_02_02
+Retrieved: 2023-02-02
 #>
 Param(
     [String]

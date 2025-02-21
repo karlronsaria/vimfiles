@@ -2,7 +2,7 @@ require('define')
 
 -- [[/\v^(\s*(\*|\-|\d+\.|[^\w\s]+))? \[\zs[^\]\[]{1,3}\ze]] .. '\\]' .. special('<CR>'),
 
--- -- OLD (karlr 2023_09_28_210418)
+-- -- OLD (karlr 2023-09-28-210418)
 -- -- -----------------------------
 -- -- includes non-checkbox items and item tokens that cannot be justified,
 -- -- such as strings with brackets in them and anything having a length
@@ -11,7 +11,7 @@ require('define')
 -- --            ~~~~~~~~~~~~~~~~~~
 -- [[/\v^(\s*(\*|\-|\d+\.|[^\w\s]+))? \[\zs.+\ze]] .. '\\]' .. special('<CR>'), 'm', true
 
--- -- OLD (karlr 2023_09_28_210253)
+-- -- OLD (karlr 2023-09-28-210253)
 -- -- -----------------------------
 -- -- ignores program annotations (comments)
 -- [[/\v^(\s*(\*|\-|\d+\.))? \[\zs.+\ze]] .. '\\]' .. special('<CR>'), 'm', true

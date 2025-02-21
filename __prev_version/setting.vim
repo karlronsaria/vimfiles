@@ -31,6 +31,6 @@ autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 " colorscheme dracula
 
 " link: https://vi.stackexchange.com/questions/9831/disable-ctrl-z-in-normal-mode
-" retrieved: 2022_07_26
+" retrieved: 2022-07-26
 :noremap <c-z> <nop>
 

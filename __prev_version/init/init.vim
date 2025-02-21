@@ -1,7 +1,7 @@
 " link: https://github.com/dhruvasagar/dotfiles/blob/master/vim/vimrc
 " link: https://stackoverflow.com/questions/46964475/how-can-i-source-files-relative-to-file
 " link: https://stackoverflow.com/users/145525/dhruva-sagar
-" retrieved: 2022_03_22
+" retrieved: 2022-03-22
 "
 :function SourceFiles(config_list)
 :  let g:vim_home = get(g:, 'vim_home', expand('~/.vim/'))

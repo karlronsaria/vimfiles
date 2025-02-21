@@ -39,15 +39,15 @@ vim.cmd([[
 
 -- link
 -- url: <https://vi.stackexchange.com/questions/9831/disable-ctrl-z-in-normal-mode>
--- retrieved: 2022_07_26
+-- retrieved: 2022-07-26
 nmap("<c-z>", "<nop>")
 
 -- link
 -- url: <https://stackoverflow.com/questions/15449591/vim-execute-current-file>
--- retrieved: 2023_10_18
+-- retrieved: 2023-10-18
 nmap("<f9>", ":!%:p<cr>")
 
--- (karlr 2025_02_10)
+-- (karlr 2025-02-10)
 -- change the opacity of popup elements
 vim.o.pumblend = 70
 

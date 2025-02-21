@@ -1,7 +1,7 @@
 
 -- link
 --   url: https://stackoverflow.com/questions/916875/yank-file-name-path-of-current-buffer-in-vim
---   retrieved: 2023_01_16
+--   retrieved: 2023-01-16
 
 vim.api.nvim_create_user_command(
   'ClipPath',

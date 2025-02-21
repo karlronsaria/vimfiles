@@ -22,7 +22,7 @@ end
 ---
 -- link
 -- url: <https://www.notonlycode.org/neovim-lua-config/>
--- retrieved: 2022_07_30
+-- retrieved: 2022-07-30
 
 -- @param mode string
 -- @param shortcut string
@@ -50,7 +50,7 @@ end
 
 -- link
 -- url: <https://stackoverflow.com/questions/42373969/how-to-pass-a-tuple-as-arguments-to-a-lua-function/42375132#42375132>
--- retrieved: 2022_07_31
+-- retrieved: 2022-07-31
 
 function pack(...)
     return {n = select("#", ...), ...}

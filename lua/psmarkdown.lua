@@ -40,7 +40,7 @@ function TestWorkingDir(functionName)
     return 1
 end
 
--- (karlr 2024_10_10)
+-- (karlr 2024-10-10)
 -- Requires: powershell cmdlet:ConvertTo-MarkdownCanceledItem
 -- Location:
 --   C:\devlib\powershell\WorkList.ps1
@@ -101,7 +101,7 @@ function RemoveImage()
         return
     end
 
-    local pattern = [[\v\(\zs\w*\/(\w+\/)+\d+(_\d+){3}\.\w+\ze\)]] -- Uses DateTimeFormat
+    local pattern = [[\v\(\zs\w*\/(\w+\/)+\d+(-\d+){3}\.\w+\ze\)]] -- Uses DateTimeFormat
     local capture = string.match(vim.fn.getline('.'), pattern)
 
     if capture == nil then

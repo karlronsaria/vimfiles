@@ -5,7 +5,7 @@
 --   - <https://neovim.io/doc/user/lua.html>
 --   - <https://neovim.io/doc/user/options.html>
 --   - <https://github.com/nanotee/nvim-lua-guide>
--- - retrieved: 2022_07_30
+-- - retrieved: 2022-07-30
 
 require('my-package')
 require('my-vscode')

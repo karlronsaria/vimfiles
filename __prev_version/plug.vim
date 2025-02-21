@@ -1,4 +1,4 @@
-﻿call plug#begin()
+call plug#begin()
     Plug 'sheerun/vim-polyglot'
     Plug 'vimwiki/vimwiki'
     Plug 'kristijanhusak/vim-simple-notifications'
