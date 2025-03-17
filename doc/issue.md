@@ -1,5 +1,31 @@
 # issue
 
+- [ ] 2025-03-17-011938
+  - what: nvim/LinkExplore
+  - howto
+
+    ```markdown
+    [consume document for git branch names](<./todo/medium-naming-conventions-for-git-branches.pdf>)
+    ```
+
+  - actual
+    - No action taken
+  - expected
+    - Open Windows Explorer to file under cursor
+
+- [ ] issue 2025-03-17-012140
+  - what: nvim/LinkExplore
+  - howto
+
+    ```markdown
+    non-link content
+    ```
+
+  - actual
+    - No action taken
+  - expected
+    - An error message
+
 - [ ] 2025-01-06-032608
   - howto
     - in powershell
