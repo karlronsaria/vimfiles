@@ -13,7 +13,9 @@ vim.api.nvim_create_user_command(
     local dateStr = Join('', RunPowerShellNoProfile(cmd))
 
     print(dateStr)
-    local start, len = string.find(dateStr, '%d%d%d%d_%d%d_%d%d')
+
+    -- (karlr 2025-03-28): Hyphens need to be escaped ``%-``
+    local start, len = string.find(dateStr, '%d%d%d%d%-%d%d%-%d%d') -- Uses DateTimeFormat
 
     if (nil == start) then
         return

@@ -21,6 +21,7 @@ lspconfig.pyright.setup{  -- Python
         }
     }
 }
+lspconfig.sqlls.setup{}  -- SQL
 
 -- Keybindings
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })

@@ -54,6 +54,20 @@
 
 ## resolved
 
+- [x] issue 2025-03-27-153329
+  - solution: I missed an instance of DateTimeFormat
+  - where: pscalendar
+  - howto
+
+    ```text
+    :Calendar
+    ```
+
+  - actual
+    - Nothing is put in the editor
+  - expected
+    - Put the date
+
 - [x] 2023-10-17-003551
   - cancel
     - from now on, use Unix- and Json-based path strings: ``"C:/Program\ Files"``
