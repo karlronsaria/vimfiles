@@ -28,6 +28,9 @@ function GetRegLinkTable(line)
 
     -- todo: extend pattern matching to '(HK|hk)'
     for value in string.gmatch(line, "HK[^()\"]+") do
+        -- (karlr 2025-12-03)
+        value = value:gsub("]", "")
+
         table.insert(myTable, value)
     end
 
@@ -134,7 +137,6 @@ vim.api.nvim_create_user_command(
     function()
         local pwshCmd = script_path() .. 'pwsh/Open-Registry.ps1'
         local cmd = ''
-        local isKey = 0
         for _, value in pairs(GetRegLinkTable(vim.fn.getline('.'))) do
             cmd = pwshCmd .. ' -Path \'' .. value .. '\''
             print(cmd)
