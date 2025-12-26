@@ -46,28 +46,24 @@ end
 --   C:\devlib\powershell\WorkList.ps1
 --   C:\devlib\powershell\PsMarkdown\*
 -- @return void
-function CancelItem(line)
-    local fname = 'CancelName'
-
-    local pwshCmd = script_path()
-        .. 'pwsh/ConvertTo-CanceledItem.ps1 -InputString '
-        .. [[']] .. line:gsub([[']], [['']]) .. [[']]
-
-    return RunPowerShellNoProfile(pwshCmd)
-end
-
-function CancelItemOnLine(line_num)
-    local line = vim.api.nvim_buf_get_lines(0, line_num - 1, line_num, false)[1]
-    vim.api.nvim_buf_set_lines(0, line_num - 1, line_num, false, CancelItem(line))
-end
-
-function CancelItemsInSelection()
-    local start_pos = vim.fn.getpos("'<")[2] -- start line
-    local end_pos = vim.fn.getpos("'>")[2] -- end line
+function ReplaceWithCanceledItem(start_pos, end_pos)
+    local inputs = {}
 
     for line_num = start_pos, end_pos do
-        CancelItemOnLine(line_num)
+        local line = vim.api.nvim_buf_get_lines(0, line_num - 1, line_num, false)[1]
+        line = [[']] .. line:gsub([[']], [['']]) .. [[']]
+        table.insert(inputs, line)
     end
+
+    local inputStr = table.concat(inputs, ", ")
+
+    local pwshCmd = inputStr
+        .. ' | '
+        .. script_path()
+        .. 'pwsh/ConvertTo-CanceledItem.ps1'
+
+    local outputs = RunPowerShellNoProfile(pwshCmd)
+    vim.api.nvim_buf_set_lines(0, start_pos - 1, end_pos, false, outputs)
 end
 
 -- Requires: powershell cmdlet:Save-ClipboardToImageFormat
@@ -133,16 +129,9 @@ vim.api.nvim_create_user_command(
 
 vim.api.nvim_create_user_command(
   'Strike',
-  function()
-    local line_num = vim.api.nvim_win_get_cursor(0)[1]
-    CancelItemOnLine(line_num)
+  function(opts)
+    return ReplaceWithCanceledItem(opts.line1, opts.line2)
   end,
-  { nargs = 0, range = false }
-)
-
-vim.api.nvim_create_user_command(
-  'StrikeAll',
-  CancelItemsInSelection,
   { nargs = 0, range = true }
 )
 

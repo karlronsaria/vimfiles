@@ -1,8 +1,13 @@
 Param(
+    [Parameter(ValueFromPipeline)]
     $InputString
 )
 
-. $PsScriptRoot\PsMarkdown\demand\Worklist.ps1
+Begin {
+    . $PsScriptRoot\PsMarkdown\demand\Worklist.ps1
+}
 
-return ConvertTo-MarkdownCanceledItem -InputString $InputString
+Process {
+    return ConvertTo-MarkdownCanceledItem -InputString $InputString
+}
 
