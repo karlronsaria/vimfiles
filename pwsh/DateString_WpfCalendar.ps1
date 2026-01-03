@@ -96,7 +96,7 @@ Add-Type -AssemblyName PresentationFramework
             />
         <Button
             Name="CopyWeekButton"
-            Content="Copy _Pretty Date"
+            Content="Copy _Week Date"
             VerticalAlignment="Top"
             Margin="200,60,10,0"
             MinWidth="120"
@@ -106,7 +106,7 @@ Add-Type -AssemblyName PresentationFramework
             />
         <Button
             Name="CopyPrettyButton"
-            Content="Copy _Week Date"
+            Content="Copy _Pretty Date"
             VerticalAlignment="Top"
             Margin="200,84,10,0"
             MinWidth="120"
