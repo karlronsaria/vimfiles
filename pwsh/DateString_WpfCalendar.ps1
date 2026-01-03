@@ -95,25 +95,35 @@ Add-Type -AssemblyName PresentationFramework
             KeyboardNavigation.TabIndex="2"
             />
         <Button
-            Name="CopyPrettyButton"
+            Name="CopyWeekButton"
             Content="Copy _Pretty Date"
             VerticalAlignment="Top"
-            Margin="200,61,10,0"
+            Margin="200,60,10,0"
             MinWidth="120"
             VerticalContentAlignment="Center"
             Style="{StaticResource MyButton}"
             KeyboardNavigation.TabIndex="3"
             />
         <Button
-            Name="CancelButton"
-            IsCancel="True"
-            Content="Ca_ncel"
+            Name="CopyPrettyButton"
+            Content="Copy _Week Date"
             VerticalAlignment="Top"
-            Margin="200,86,10,0"
+            Margin="200,84,10,0"
             MinWidth="120"
             VerticalContentAlignment="Center"
             Style="{StaticResource MyButton}"
             KeyboardNavigation.TabIndex="4"
+            />
+        <Button
+            Name="CancelButton"
+            IsCancel="True"
+            Content="Ca_ncel"
+            VerticalAlignment="Top"
+            Margin="200,108,10,0"
+            MinWidth="120"
+            VerticalContentAlignment="Center"
+            Style="{StaticResource MyButton}"
+            KeyboardNavigation.TabIndex="5"
             />
     </Grid>
 </Window>
@@ -126,10 +136,12 @@ $calendar = $window.FindName("Calendar")
 $message = $window.FindName("Message")
 $print = $window.FindName("PrintButton")
 $copy = $window.FindName("CopyStandardButton")
+$week = $window.FindName("CopyWeekButton")
 $pretty = $window.FindName("CopyPrettyButton")
 $cancel = $window.FindName("CancelButton")
 
 $stdFormat = 'yyyy-MM-dd' # Uses DateTimeFormat
+$weekFormat = "ddd $stdFormat"
 $prettyFormat = 'd MMMM yyyy'
 
 $global:__WINDOW_RESULT__ = [PsCustomObject]@{
@@ -180,6 +192,20 @@ $copy.Add_Click({
     $dateStr = Get-SelectedDateString `
         -Calendar $calendar `
         -Format $stdFormat
+
+    Save-ToClipboard $dateStr
+
+    $global:__WINDOW_RESULT__ = [PsCustomObject]@{
+        Success = $true
+        Print = $false
+        Date = $dateStr
+    }
+})
+
+$week.Add_Click({
+    $dateStr = Get-SelectedDateString `
+        -Calendar $calendar `
+        -Format $weekFormat
 
     Save-ToClipboard $dateStr
 
