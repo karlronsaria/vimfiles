@@ -4,7 +4,7 @@
 --   retrieved: 2023-01-16
 
 vim.api.nvim_create_user_command(
-  'ClipPath',
+  'Clippath',
   function()
     vim.api.nvim_feedkeys(
       [[:let @+ = expand("%")]] .. special('<CR>'), 'm', true
@@ -14,7 +14,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  'ClipFullPath',
+  'Clipfullpath',
   function()
     vim.api.nvim_feedkeys(
       [[:let @+ = expand("%:p")]] .. special('<CR>'), 'm', true

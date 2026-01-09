@@ -49,7 +49,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  'NoNulls',
+  'Nonulls',
   function()
     vim.api.nvim_feedkeys(
       [[:%s/\%x00//g]] .. special('<CR>'), 'm', true

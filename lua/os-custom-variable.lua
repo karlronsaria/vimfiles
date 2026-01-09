@@ -4,7 +4,7 @@ function GetGitProfile()
 end
 
 vim.api.nvim_create_user_command(
-  'GitProfile',
+  'Gitprofile',
   function()
     vim.api.nvim_put({ GetGitProfile() }, 'c', true, true)
   end,

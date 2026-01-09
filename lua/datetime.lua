@@ -49,7 +49,7 @@ function GetNextDateString(day_trinomial, format)
 end
 
 vim.api.nvim_create_user_command(
-  'PutDate',
+  'Putdate',
   function(opts)
     -- vim.api.nvim_put({ GetDate() }, 'c', true, true)
     local format = "%Y-%m-%d"
@@ -60,7 +60,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  'PutDateTime',
+  'Putdatetime',
   function(opts)
     -- vim.api.nvim_put({ GetDateTime() }, 'c', true, true)
     local format = "%Y-%m-%d-%H%M%S"
@@ -71,7 +71,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  'PutWeekDate',
+  'Putweekdate',
   function(opts)
     -- vim.api.nvim_put({ GetWeekDate() }, 'c', true, true)
     local format = "%a %Y-%m-%d"
@@ -82,7 +82,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  'ClipDate',
+  'Clipdate',
   function()
     local date = GetDate()
     vim.fn.setreg('+', date)
@@ -92,7 +92,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-  'ClipDateTime',
+  'Clipdatetime',
   function()
     local date = GetDateTime()
     vim.fn.setreg('+', date)

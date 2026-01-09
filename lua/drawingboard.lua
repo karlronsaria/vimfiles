@@ -86,7 +86,7 @@ vim.api.nvim_create_autocmd("ModeChanged", {
 
 -- Define a custom command to use the captured mode
 vim.api.nvim_create_user_command(
-    'CheckPreviousMode',
+    'Checkpreviousmode',
     function()
         for i, v in pairs(modes) do
             print(v)

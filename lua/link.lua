@@ -73,7 +73,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-    'LinkClip',
+    'Linkclip',
     function()
         local list = ''
         for _, value in pairs(GetSystemLinkTable(vim.fn.getline('.'))) do
@@ -86,7 +86,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-    'LinkShell',
+    'Linkshell',
     function()
         local pwshCmd = script_path() .. 'pwsh/Open-Shell.ps1'
         local cmd = ''
@@ -100,7 +100,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-    'LinkExplore',
+    'Linkexplore',
     function()
         local cmd = ''
         for _, value in pairs(GetSystemLinkTable(vim.fn.getline('.'))) do
@@ -119,7 +119,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-    'LinkRun',
+    'Linkrun',
     function()
         local cmd = ''
         for _, value in pairs(GetSystemLinkTable(vim.fn.getline('.'))) do
@@ -133,7 +133,7 @@ vim.api.nvim_create_user_command(
 
 -- requires regjump
 vim.api.nvim_create_user_command(
-    'LinkReg',
+    'Linkreg',
     function()
         local pwshCmd = script_path() .. 'pwsh/Open-Registry.ps1'
         local cmd = ''
