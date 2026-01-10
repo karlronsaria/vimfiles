@@ -51,7 +51,7 @@ function ReplaceWithCanceledItem(start_pos, end_pos)
 
     for line_num = start_pos, end_pos do
         local line = vim.api.nvim_buf_get_lines(0, line_num - 1, line_num, false)[1]
-        line = [[']] .. line:gsub([[']], [['']]) .. [[']]
+        line = [[']] .. line:gsub([[']], [['']]):gsub([["]], [[\"]]) .. [[']]
         table.insert(inputs, line)
     end
 

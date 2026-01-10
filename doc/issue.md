@@ -1,7 +1,7 @@
 # issue
 
-- [ ] 2025-03-17-011938
-  - what: nvim/LinkExplore
+- [ ] issue 2025-03-17-011938
+  - what: LinkExplore
   - howto
 
     ```markdown
@@ -14,19 +14,15 @@
     - Open Windows Explorer to file under cursor
 
 - [ ] issue 2025-03-17-012140
-  - what: nvim/LinkExplore
+  - what: LinkExplore
   - howto
-
-    ```markdown
-    non-link content
-    ```
-
+    - Use command over non-link content
   - actual
     - No action taken
   - expected
     - An error message
 
-- [ ] 2025-01-06-032608
+- [ ] issue 2025-01-06-032608
   - howto
     - in powershell
 
@@ -36,7 +32,7 @@
 
     - in ``PsProfile/readme.md``
 
-      ```powershell
+      ```markdown
       # todo
       - [ ] PS-version-specific modules
         - ex: ``MeasureCommand.ps1#function:ConvertFrom-Json``
@@ -53,6 +49,64 @@
     ```
 
 ## resolved
+
+- [x] issue 2026-01-09-040901
+  - what: Strike
+  - case 1
+    - howto
+      - command ``Strike`` over the following line
+
+        ```markdown
+        - [x] [unmonitored file store]("file:///C:/Users/karlr/OneDrive/Pictures/Samsung&#32;Gallery/DCIM/Camera/")
+        ```
+
+    - actual
+      - line deleted
+    - expected
+
+        ```markdown
+        - [x] ~~[unmonitored file store]("file:///C:/Users/karlr/OneDrive/Pictures/Samsung&#32;Gallery/DCIM/Camera/")~~
+        ```
+
+  - case 2
+    - howto
+      - command ``Strike`` over the following line
+
+        ```markdown
+        - [x] [unmonitored file store]("")
+        ```
+
+    - actual
+
+      ```markdown
+      - [x] ~~[unmonitored file store](")~~
+      ```
+
+    - expected
+
+      ```markdown
+      - [x] ~~[unmonitored file store]("")~~
+      ```
+
+  - case 3
+    - howto
+      - command ``Strike`` over the following line
+
+        ```markdown
+        - [x] [unmonitored file store]("file:///C:/Users/karlr/OneDrive/")
+        ```
+
+    - actual
+
+      ```markdown
+      - [x] ~~[unmonitored file store](file:///C:/Users/karlr/OneDrive/)~~
+      ```
+
+    - expected
+
+      ```markdown
+      - [x] ~~[unmonitored file store]("file:///C:/Users/karlr/OneDrive/")~~
+      ```
 
 - [x] issue 2025-03-27-153329
   - solution: I missed an instance of DateTimeFormat
@@ -87,7 +141,7 @@
     E447: Can't find file "Files\WindowsApps\Microsoft.WindowsTerminal_1.17.11461.0_x64__8wekyb3d8bbwe\ProfileIcons" in path
     ```
 
-- [x] 2025-01-29-133609
+- [x] issue 2025-01-29-133609
   - where: ``StrikeAll``
   - actual
 
@@ -150,7 +204,7 @@
   - solution
     - refactor pwsh instances to run with no profile by default
 
-- [x] 2024-10-17-023317
+- [x] issue 2024-10-17-023317
   - where
     - ``Mdvinc``
   - actual
@@ -160,19 +214,22 @@
     |----------|-------------|-----|--------|
     ```
 
-- [x] 2023-05-03-133526
+- [x] issue 2023-05-03-133526
   - howto
     - in program annotations
+
       ```cpp
       // [ ] issue 2023-05-03-133202
       ```
+
     - keystroke: ``:Item``
   - actual
-    ```
+
+    ```text
     Pattern not found
     ```
 
-- [x] 2023-03-22-190240
+- [x] issue 2023-03-22-190240
   - howto
     - command: ``:LinkReg``
     - line: ``"Where": "HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion/App Paths",``
@@ -181,11 +238,12 @@
   - actual
     - ``HKLM/SOFTWARE/Microsoft/Windows/CurrentVersion``
 
-- [x] 2023-01-25-153756
+- [x] issue 2023-01-25-153756
   - howto
     ``nvim``
   - actual
-    ```
+
+    ```text
     Error detected while processing C:\Users\karlr\AppData\Local\nvim\init.lua:
     E5113: Error while calling lua chunk: C:\Users\karlr\AppData\Local\nvim/lua/define.lua:9: Vim(edit):E499: Empty file name for '%' or '#', only works with ":p:h": :ed ++ff=dos
     stack traceback:
@@ -195,11 +253,12 @@
     Press ENTER or type command to continue
     ```
 
-- [x] 2022-12-16
+- [x] issue 2022-12-16
   - howto
     - keystroke: ``:Item``
   - actual
-    ```
+
+    ```markdown
     ### todo
     - [x] cash cheques
        ~
@@ -210,8 +269,10 @@
     - [x] see [``todo A``](#todo)
        ~~~~~~~~~~~~~~~~~~
     ```
+
   - expected
-    ```
+
+    ```markdown
     ### todo
     - [x] cash cheques
        ~

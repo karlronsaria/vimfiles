@@ -3,6 +3,9 @@ local psapp = "pwsh"
 -- @param cmd string
 -- @return string array
 function RunExternal(cmd)
+    -- prepare DOS string
+    cmd = cmd:gsub("&", "^&")
+
     local pipe = io.popen(cmd)
     local outputs = {}
 
@@ -41,7 +44,7 @@ end
 -- @param delim string
 -- @return string
 function Join(delim, lines)
-    str = ""
+    local str = ""
 
     for _, value in pairs(lines) do
         str = str .. value .. delim
