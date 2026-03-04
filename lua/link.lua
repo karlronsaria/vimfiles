@@ -1,6 +1,8 @@
 require('define')
 require('run')
 
+local file_explore_app = 'fpilot' -- 'windows'
+
 function GetLinkTable(line)
     local myTable = {}
 
@@ -104,13 +106,16 @@ vim.api.nvim_create_user_command(
     function()
         local cmd = ''
         for _, value in pairs(GetSystemLinkTable(vim.fn.getline('.'))) do
-            -- -- (karlr 2025-02-13)
-            -- cmd = "explorer " .. vim.fn.fnamemodify(value, ':h'):gsub("/", "\\")
+            local file_explorers = {
+                ['fpilot'] = 'fpilot ',
+                ['windows'] = 'explorer /select,',
+            }
 
             -- link: Open Explorer and Highlight Specific File with PowerShell
             -- - url: <https://superuser.com/questions/973144/open-explorer-and-highlight-specific-file-with-powershell>
             -- - retrieved: 2025-02-13
-            cmd = "explorer /select," .. vim.fn.fnamemodify(value, ':p')
+
+            cmd = file_explorers[file_explore_app] .. vim.fn.fnamemodify(value, ':p')
             print(cmd)
             io.popen(cmd)
         end

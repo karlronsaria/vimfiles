@@ -1,27 +1,5 @@
 # issue
 
-- [ ] issue 2025-03-17-011938
-  - what: LinkExplore
-  - howto
-
-    ```markdown
-    [consume document for git branch names](<./todo/medium-naming-conventions-for-git-branches.pdf>)
-    ```
-
-  - actual
-    - No action taken
-  - expected
-    - Open Windows Explorer to file under cursor
-
-- [ ] issue 2025-03-17-012140
-  - what: LinkExplore
-  - howto
-    - Use command over non-link content
-  - actual
-    - No action taken
-  - expected
-    - An error message
-
 - [ ] issue 2025-01-06-032608
   - howto
     - in powershell
@@ -49,6 +27,28 @@
     ```
 
 ## resolved
+
+- [x] issue 2025-03-17-011938
+  - what: LinkExplore
+  - howto
+
+    ```markdown
+    [consume document for git branch names](<./todo/medium-naming-conventions-for-git-branches.pdf>)
+    ```
+
+  - actual
+    - No action taken
+  - expected
+    - Open Windows Explorer to file under cursor
+
+- [x] issue 2025-03-17-012140
+  - what: LinkExplore
+  - howto
+    - Use command over non-link content
+  - actual
+    - No action taken
+  - expected
+    - An error message
 
 - [x] issue 2026-01-09-040901
   - what: Strike
@@ -122,7 +122,7 @@
   - expected
     - Put the date
 
-- [x] 2023-10-17-003551
+- [x] issue 2023-10-17-003551
   - cancel
     - from now on, use Unix- and Json-based path strings: ``"C:/Program\ Files"``
   - what
@@ -163,7 +163,7 @@
     ~~But what happens if they choose 3, or~~
     ```
 
-- [x] 2023-12-21-031304
+- [x] issue 2023-12-21-031304
   - where
     - function: ``Img``
   - howto
@@ -175,7 +175,7 @@
   - problem
     - unable to locate working directory of file when creating file in nvim editor
 
-- [x] 2024-06-18-204333
+- [x] issue 2024-06-18-204333
   - where
     - ``LinkExplore``
   - howto
